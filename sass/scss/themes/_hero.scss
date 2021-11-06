@@ -1,0 +1,16 @@
+.hero {
+  width: 100%;
+  height: 200vh;
+  @include flex-center;
+  border: 1px solid blue;
+
+  .hero-img-box {
+    width: 90%;
+    height: auto;
+
+    .hero-img {
+      @include keep-it-hundo;
+      object-fit: contain;
+    }
+  }
+}
