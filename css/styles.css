@@ -54,6 +54,8 @@ body {
   height: 100%;
   margin-left: 1rem;
   padding: 1rem;
+  filter: drop-shadow(0.1rem 0.1rem 0.3rem #050505a1);
+  -webkit-filter: drop-shadow(0.1rem 0.1rem 0.3rem #050505);
 }
 
 .header .logo-main .logo-img {
@@ -77,6 +79,26 @@ body {
 
 .header .nav-main .nav-ul .nav-li {
   list-style-type: none;
+  position: relative;
+}
+
+.header .nav-main .nav-ul .nav-li::after {
+  content: "";
+  width: 0;
+  height: 0.3rem;
+  position: absolute;
+  left: 0;
+  bottom: -5%;
+  transition: 0.3s ease;
+  -webkit-transition: 0.3s ease;
+  -moz-transition: 0.3s ease;
+  -ms-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
+  background-color: #050505;
+}
+
+.header .nav-main .nav-ul .nav-li:hover::after {
+  width: 101%;
 }
 
 .header .nav-main .nav-ul .nav-li .nav-links:link,
@@ -84,25 +106,91 @@ body {
   text-decoration: none;
   color: #050505;
   font-size: 2.5rem;
+  text-shadow: 0.1rem 0.1rem 0.3rem #7c7979;
 }
 
 .hero {
   width: 100%;
-  height: 200vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid blue;
+  flex-direction: column;
 }
 
 .hero .hero-img-box {
   width: 90%;
   height: auto;
+  filter: drop-shadow(0.1rem 0.1rem 0.3rem #050505a1);
+  -webkit-filter: drop-shadow(0.1rem 0.1rem 0.3rem #050505a1);
 }
 
 .hero .hero-img-box .hero-img {
   width: 100%;
   height: 100%;
   object-fit: contain;
+}
+
+.hero .icon-wrapper {
+  width: 60%;
+  height: auto;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.hero .icon-wrapper i {
+  color: #050505;
+  font-size: 3rem;
+  text-shadow: 0.1rem 0.1rem 0.3rem #7c7979;
+  transition: 0.3s ease;
+  -webkit-transition: 0.3s ease;
+  -moz-transition: 0.3s ease;
+  -ms-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
+}
+
+.hero .icon-wrapper i:hover {
+  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
+}
+
+.sections {
+  width: 100%;
+  height: 500rem;
+  overflow-x: hidden;
+}
+
+.sections .title {
+  width: 90%;
+  height: 6rem;
+  margin: 2rem auto 0;
+  position: relative;
+  font-size: 3rem;
+  letter-spacing: 0.4rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.sections .title::after {
+  content: "";
+  width: 100%;
+  height: 0.2rem;
+  position: absolute;
+  left: 0;
+  bottom: 5%;
+  background-color: #050505;
+}
+
+.section-creator {
+  width: 100%;
+  height: 60rem;
+  background-color: beige;
 }
 /*# sourceMappingURL=styles.css.map */

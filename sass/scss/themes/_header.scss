@@ -8,6 +8,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  //   @include shadow;
   z-index: 100;
 
   // Logo //
@@ -17,6 +18,8 @@
     height: 100%;
     margin-left: 1rem;
     padding: 1rem;
+    filter: drop-shadow(0.1rem 0.1rem 0.3rem #050505a1);
+    -webkit-filter: drop-shadow(0.1rem 0.1rem 0.3rem #050505);
 
     .logo-img {
       @include keep-it-hundo;
@@ -38,12 +41,29 @@
 
       .nav-li {
         list-style-type: none;
+        position: relative;
+
+        &::after {
+          content: "";
+          width: 0;
+          height: 0.3rem;
+          position: absolute;
+          left: 0;
+          bottom: -5%;
+          @include transit3;
+          background-color: $color-dark;
+        }
+
+        &:hover::after {
+          width: 101%;
+        }
 
         .nav-links:link,
         .nav-links:visited {
           text-decoration: none;
           color: $color-dark;
           font-size: 2.5rem;
+          @include text-shadowgray-lite;
         }
       }
     }
