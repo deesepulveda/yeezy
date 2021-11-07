@@ -1,5 +1,43 @@
 .section-creator {
-  width: 100%;
-  height: 60rem;
-  background-color: beige;
+  height: 70rem;
+  position: relative;
+  background-image: url(../public/images/KanyeAdidasAd.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+
+  .title-creator {
+    color: $color-lite;
+    z-index: 3;
+  }
+
+  #title-creator::after {
+    content: "";
+    width: 100%;
+    height: 0.2rem;
+    position: absolute;
+    left: 0;
+    bottom: 5%;
+    background-color: $color-lite;
+  }
+
+  // .bg-img {
+  //   @include keep-it-hundo;
+  //   object-fit: cover;
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   z-index: -1;
+  // }
+
+  .overlay {
+    width: 100%;
+    height: 100%;
+    background-color: $color-dark;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.7;
+  }
 }

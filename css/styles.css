@@ -42,10 +42,15 @@ body {
   height: 10rem;
   position: fixed;
   top: 0;
-  background-color: #fff;
+  background: linear-gradient(to bottom, #fff, rgba(255, 255, 255, 0));
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: 0.3s ease;
+  -webkit-transition: 0.3s ease;
+  -moz-transition: 0.3s ease;
+  -ms-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
   z-index: 100;
 }
 
@@ -162,7 +167,6 @@ body {
 
 .sections {
   width: 100%;
-  height: 500rem;
   overflow-x: hidden;
 }
 
@@ -189,8 +193,93 @@ body {
 }
 
 .section-creator {
+  height: 70rem;
+  position: relative;
+  background-image: url(../public/images/KanyeAdidasAd.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.section-creator .title-creator {
+  color: #fff;
+  z-index: 3;
+}
+
+.section-creator #title-creator::after {
+  content: "";
   width: 100%;
-  height: 60rem;
-  background-color: beige;
+  height: 0.2rem;
+  position: absolute;
+  left: 0;
+  bottom: 5%;
+  background-color: #fff;
+}
+
+.section-creator .overlay {
+  width: 100%;
+  height: 100%;
+  background-color: #050505;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.7;
+}
+
+.section-lineup {
+  height: auto;
+}
+
+.section-lineup .shoe-container {
+  width: 100%;
+  height: 100%;
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+.section-lineup .shoe-container .shoes {
+  width: 80%;
+  height: 28rem;
+  margin: 2rem auto 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.section-lineup .shoe-container .shoes .shoe-name {
+  opacity: 0;
+  font-family: "Blacksword", sans-serif;
+  text-transform: capitalize;
+  font-size: 5rem;
+  transition: 0.3s ease;
+  -webkit-transition: 0.3s ease;
+  -moz-transition: 0.3s ease;
+  -ms-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
+  z-index: -1;
+  transform: translateY(200%);
+  -webkit-transform: translateY(200%);
+  -moz-transform: translateY(200%);
+  -ms-transform: translateY(200%);
+  -o-transform: translateY(200%);
+}
+
+.section-lineup .shoe-container .shoes .shoe-img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  transition: 0.3s ease;
+  -webkit-transition: 0.3s ease;
+  -moz-transition: 0.3s ease;
+  -ms-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
 }
 /*# sourceMappingURL=styles.css.map */

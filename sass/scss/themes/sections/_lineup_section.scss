@@ -1,0 +1,43 @@
+.section-lineup {
+  height: auto;
+
+  .shoe-container {
+    @include keep-it-hundo;
+    max-width: 120rem;
+    margin: 0 auto;
+    // @include flex-center-col;
+
+    .shoes {
+      width: 80%;
+      height: 28rem;
+      margin: 2rem auto 4rem;
+      position: relative;
+      overflow: hidden;
+
+      .shoe-name {
+        opacity: 0;
+        font-family: $secondary-font;
+        text-transform: capitalize;
+        font-size: 5rem;
+        @include transit3;
+        z-index: -1;
+        transform: translateY(200%);
+        -webkit-transform: translateY(200%);
+        -moz-transform: translateY(200%);
+        -ms-transform: translateY(200%);
+        -o-transform: translateY(200%);
+      }
+
+      .shoe-img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        @include transit3;
+        position: absolute;
+        bottom: 10%;
+        left: 50%;
+        @include transformX;
+      }
+    }
+  }
+}
