@@ -319,31 +319,31 @@ body {
 }
 
 .section-gallery .gallery-container .gallery-img-box:nth-of-type(2) {
-  animation-delay: 1000ms;
+  animation-delay: 800ms;
 }
 
 .section-gallery .gallery-container .gallery-img-box:nth-of-type(3) {
-  animation-delay: 1500ms;
+  animation-delay: 1100ms;
 }
 
 .section-gallery .gallery-container .gallery-img-box:nth-of-type(4) {
-  animation-delay: 2000ms;
+  animation-delay: 1400ms;
 }
 
 .section-gallery .gallery-container .gallery-img-box:nth-of-type(5) {
-  animation-delay: 2500ms;
+  animation-delay: 1700ms;
 }
 
 .section-gallery .gallery-container .gallery-img-box:nth-of-type(6) {
-  animation-delay: 3000ms;
+  animation-delay: 2000ms;
 }
 
 .section-gallery .gallery-container .gallery-img-box:nth-of-type(7) {
-  animation-delay: 3500ms;
+  animation-delay: 2300ms;
 }
 
 .section-gallery .gallery-container .gallery-img-box:nth-of-type(8) {
-  animation-delay: 4000ms;
+  animation-delay: 2600ms;
 }
 
 .section-gallery .gallery-container .gallery-img-box .gallery-img {
@@ -382,8 +382,196 @@ body {
 }
 
 .section-kicks {
-  height: 100rem;
+  height: 200rem;
+  border-top: 1px solid red;
+}
+
+.section-kicks .kicks-container {
+  width: 100%;
+  height: 150rem;
+  margin-top: 2rem;
   background-color: bisque;
+}
+
+.section-kicks .kicks-container .kick-box {
+  width: 100%;
+  height: 60rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.section-kicks .kicks-container .kick-box .pair-title {
+  width: 100%;
+  height: auto;
+  color: #fff;
+  font-size: 6rem;
+  font-family: "Blacksword", sans-serif;
+  text-transform: capitalize;
+  position: absolute;
+  top: 5%;
+  left: 0;
+  z-index: 20;
+}
+
+.section-kicks .kicks-container .kick-box .vid {
+  width: 150%;
+  height: 150%;
+  object-fit: cover;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.section-kicks .kicks-container .kick-box .overlay {
+  width: 150%;
+  height: 150%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #050505;
+  opacity: 0.85;
+}
+
+.section-kicks .kicks-container .kick-box .bg-slant {
+  width: 200%;
+  height: 100%;
+  background-color: #fff;
+  position: absolute;
+  bottom: -45%;
+  left: -20%;
+  transform: rotate(-15deg);
+  -webkit-transform: rotate(-15deg);
+  -moz-transform: rotate(-15deg);
+  -ms-transform: rotate(-15deg);
+  -o-transform: rotate(-15deg);
+}
+
+.section-kicks .kicks-container .kick-box .pair-png {
+  width: 110%;
+  height: auto;
+  position: absolute;
+  bottom: 31%;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+}
+
+.section-kicks .kicks-container .kick-box .pair-png img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.section-kicks .kicks-container .kick-box .content-box {
+  width: 100%;
+  height: auto;
+  margin-bottom: 2rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.section-kicks .kicks-container .kick-box .content-box .content-main {
+  width: 100%;
+  color: red;
+  font-family: "VCR", sans-serif;
+  font-size: 3rem;
+}
+
+.section-kicks .kicks-container .kick-box .content-box .content-info {
+  width: 100%;
+  height: 10rem;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-kicks .kicks-container .kick-box .content-box .content-info ul {
+  width: 80%;
+  display: flex;
+  padding-left: 1rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.section-kicks .kicks-container .kick-box .content-box .content-info ul li {
+  font-size: 1.75rem;
+  text-align: start;
+}
+
+.section-kicks .kicks-container .kick-box .content-box .content-size {
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-kicks .kicks-container .kick-box .content-box .content-size .size {
+  margin-right: 0.5rem;
+  font-size: 2.5rem;
+}
+
+.section-kicks .kicks-container .kick-box .content-box .content-size .shoe-sizes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-kicks .kicks-container .kick-box .content-box .content-size .shoe-sizes .size-li {
+  width: 3rem;
+  height: 3rem;
+  position: relative;
+  list-style-type: none;
+  font-size: 2rem;
+  margin-left: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s ease;
+  -webkit-transition: 0.3s ease;
+  -moz-transition: 0.3s ease;
+  -ms-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
+  cursor: pointer;
+  border: 0.1rem solid #050505;
+  border-radius: 0.25rem;
+  -webkit-border-radius: 0.25rem;
+  -moz-border-radius: 0.25rem;
+  -ms-border-radius: 0.25rem;
+  -o-border-radius: 0.25rem;
+}
+
+.section-kicks .kicks-container .kick-box .content-box .content-size .shoe-sizes .size-li::after {
+  content: "out of stock";
+  width: 400%;
+  height: auto;
+  display: none;
+  font-family: "VCR", sans-serif;
+  font-size: 1.5rem;
+  color: red;
+  position: absolute;
+  top: -80%;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+}
+
+.section-kicks .kicks-container .kick-box .content-box .content-size .shoe-sizes .size-li:hover::after {
+  display: block;
+}
+
+.section-kicks .kicks-container .kick-box .content-box .content-size .shoe-sizes .size-li:hover {
+  background-color: #050505;
+  color: #fff;
 }
 
 .section-contact {
