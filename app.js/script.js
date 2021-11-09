@@ -82,3 +82,15 @@ oxfordTan.addEventListener("mouseout", () => {
   OxfordTanName.style.transform = "translateY(200%)";
   OxfordTanName.style.opacity = "0";
 });
+
+// GALLERY SECTION //
+
+const lineUpSect = document.querySelector(".section-lineup");
+const galleryImgs = document.querySelectorAll(".gallery-img-box");
+const galleryImage = document.querySelectorAll(".gallery-img");
+
+window.addEventListener("scroll", () => {
+  galleryImgs.forEach((element) => {
+    element.classList.add("zoomIn", window.scrollY > 2500);
+  });
+});
