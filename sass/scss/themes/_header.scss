@@ -22,6 +22,33 @@
     filter: drop-shadow(0.1rem 0.1rem 0.3rem #050505a1);
     -webkit-filter: drop-shadow(0.1rem 0.1rem 0.3rem #050505);
 
+    @include phoneLandscape {
+      & {
+        width: 15%;
+        margin-left: 2rem;
+        padding: 2rem;
+      }
+    }
+
+    @include tabletPortrait {
+      & {
+        width: 20%;
+        padding: 2.5rem;
+      }
+    }
+
+    @include tabletLandscapeXL {
+      & {
+        margin-left: 0;
+      }
+    }
+
+    @include largeDesktop {
+      & {
+        width: 18%;
+      }
+    }
+
     .logo-img {
       @include keep-it-hundo;
       object-fit: contain;
@@ -33,6 +60,42 @@
   .nav-main {
     width: 65%;
     height: 100%;
+
+    @include phoneLandscape {
+      & {
+        width: 50%;
+      }
+    }
+
+    @include tabletPortrait {
+      & {
+        width: 60%;
+      }
+    }
+
+    @include tabletLandscape {
+      & {
+        width: 55%;
+      }
+    }
+
+    @include tabletLandscapeXL {
+      & {
+        width: 50%;
+      }
+    }
+
+    @include desktop {
+      & {
+        width: 45%;
+      }
+    }
+
+    @include largeDesktop {
+      & {
+        width: 38%;
+      }
+    }
 
     .nav-ul {
       @include keep-it-hundo;
@@ -65,13 +128,20 @@
           color: $color-dark;
           font-size: 2.5rem;
           @include text-shadowgray-lite;
+
+          @include tabletPortrait {
+            & {
+              font-size: 3.5rem;
+            }
+          }
+
+          @include largeDesktop {
+            & {
+              font-size: 4rem;
+            }
+          }
         }
       }
     }
   }
 }
-
-// .headerChange {
-//   @include transit3;
-//   background: linear-gradient(to bottom, #fff, rgba(255, 255, 255, 0.308));
-// }

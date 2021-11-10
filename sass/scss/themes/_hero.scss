@@ -11,6 +11,26 @@
     filter: drop-shadow(0.1rem 0.1rem 0.3rem #050505a1);
     -webkit-filter: drop-shadow(0.1rem 0.1rem 0.3rem #050505a1);
 
+    @include phoneLandscape {
+      & {
+        width: 55%;
+      }
+    }
+
+    @include tabletPortrait {
+      & {
+        width: 75%;
+        filter: drop-shadow(0.2rem 0.2rem 0.5rem #050505a1);
+        -webkit-filter: drop-shadow(0.2rem 0.2rem 0.5rem #050505a1);
+      }
+    }
+
+    @include largeDesktop {
+      & {
+        width: 60%;
+      }
+    }
+
     .hero-img {
       @include keep-it-hundo;
       object-fit: contain;
@@ -26,11 +46,53 @@
     @include flex-center;
     justify-content: space-evenly;
 
+    @include phoneLandscape {
+      & {
+        width: 30%;
+      }
+    }
+
+    @include tabletPortrait {
+      & {
+        width: 40%;
+      }
+    }
+
+    @include desktop {
+      & {
+        width: 30%;
+      }
+    }
+
+    @include largeDesktop {
+      & {
+        width: 25%;
+      }
+    }
+
+    @include XlargeDesktop {
+      & {
+        width: 15%;
+      }
+    }
+
     i {
       color: $color-dark;
       font-size: 3rem;
       @include text-shadowgray-lite;
       @include transit3;
+
+      @include tabletPortrait {
+        & {
+          font-size: 4rem;
+        }
+      }
+
+      @include largeDesktop {
+        & {
+          font-size: 5rem;
+        }
+      }
 
       &:hover {
         transform: scale(1.2);
