@@ -7,6 +7,18 @@
   background-size: cover;
   background-attachment: fixed;
 
+  @include tabletPortrait {
+    & {
+      height: 100rem;
+    }
+  }
+
+  @include largeDesktop {
+    & {
+      height: 110rem;
+    }
+  }
+
   .title-creator {
     color: $color-lite;
     z-index: 3;
@@ -21,15 +33,6 @@
     bottom: 5%;
     background-color: $color-lite;
   }
-
-  // .bg-img {
-  //   @include keep-it-hundo;
-  //   object-fit: cover;
-  //   position: absolute;
-  //   top: 0;
-  //   left: 0;
-  //   z-index: -1;
-  // }
 
   .overlay {
     width: 100%;

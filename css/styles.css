@@ -341,6 +341,18 @@ body {
   background-attachment: fixed;
 }
 
+@media only screen and (min-width: 768px) {
+  .section-creator {
+    height: 100rem;
+  }
+}
+
+@media only screen and (min-width: 1824px) {
+  .section-creator {
+    height: 110rem;
+  }
+}
+
 .section-creator .title-creator {
   color: #fff;
   z-index: 3;
