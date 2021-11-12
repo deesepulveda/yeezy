@@ -162,7 +162,7 @@ body {
   -moz-transition: 0.3s ease;
   -ms-transition: 0.3s ease;
   -o-transition: 0.3s ease;
-  background-color: #050505;
+  background-color: red;
 }
 
 .header .nav-main .nav-ul .nav-li:hover::after {
@@ -321,6 +321,12 @@ body {
   align-items: center;
 }
 
+@media only screen and (min-width: 3439px) {
+  .sections .title {
+    width: 70%;
+  }
+}
+
 .sections .title::after {
   content: "";
   width: 100%;
@@ -385,8 +391,23 @@ body {
 .section-lineup .shoe-container {
   width: 100%;
   height: 100%;
-  max-width: 120rem;
   margin: 0 auto;
+}
+
+@media only screen and (min-width: 1224px) {
+  .section-lineup .shoe-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120rem;
+    margin: 0 auto 6rem;
+  }
+}
+
+@media only screen and (min-width: 1824px) {
+  .section-lineup .shoe-container {
+    width: 200rem;
+  }
 }
 
 .section-lineup .shoe-container .shoes {
@@ -395,6 +416,92 @@ body {
   margin: 2rem auto 4rem;
   position: relative;
   overflow: hidden;
+}
+
+@media only screen and (min-width: 620px) {
+  .section-lineup .shoe-container .shoes {
+    height: 30rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .section-lineup .shoe-container .shoes {
+    height: 40rem;
+    margin: 4rem auto;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .section-lineup .shoe-container .shoes {
+    height: 55rem;
+    margin: 4rem auto 6rem;
+  }
+}
+
+@media only screen and (min-width: 1224px) {
+  .section-lineup .shoe-container .shoes {
+    height: 25rem;
+  }
+}
+
+@media only screen and (min-width: 1824px) {
+  .section-lineup .shoe-container .shoes {
+    height: 40rem;
+  }
+}
+
+.section-lineup .shoe-container .shoes .shoe-box {
+  width: 100%;
+  height: 70%;
+  position: absolute;
+  bottom: 0;
+  z-index: 5;
+}
+
+.section-lineup .shoe-container .shoes .shoe-box:hover ~ .shoe-name {
+  opacity: 1;
+  transform: translateY(0);
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+}
+
+@media only screen and (min-width: 620px) {
+  .section-lineup .shoe-container .shoes .shoe-box {
+    width: 65%;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+  }
+}
+
+@media only screen and (min-width: 1224px) {
+  .section-lineup .shoe-container .shoes .shoe-box {
+    width: 90%;
+  }
+}
+
+.section-lineup .shoe-container .shoes .shoe-box .shoe-img {
+  width: 80%;
+  height: auto;
+  object-fit: contain;
+  transition: 0.3s ease;
+  -webkit-transition: 0.3s ease;
+  -moz-transition: 0.3s ease;
+  -ms-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
 }
 
 .section-lineup .shoe-container .shoes .shoe-name {
@@ -415,30 +522,33 @@ body {
   -o-transform: translateY(200%);
 }
 
-.section-lineup .shoe-container .shoes .shoe-box {
-  width: 100%;
-  height: 70%;
-  position: absolute;
-  bottom: 0;
+@media only screen and (min-width: 768px) {
+  .section-lineup .shoe-container .shoes .shoe-name {
+    font-size: 7rem;
+  }
 }
 
-.section-lineup .shoe-container .shoes .shoe-box .shoe-img {
-  width: 80%;
-  height: auto;
-  object-fit: contain;
-  transition: 0.3s ease;
-  -webkit-transition: 0.3s ease;
-  -moz-transition: 0.3s ease;
-  -ms-transition: 0.3s ease;
-  -o-transition: 0.3s ease;
-  position: absolute;
-  bottom: 10%;
-  left: 50%;
-  transform: translateX(-50%);
-  -webkit-transform: translateX(-50%);
-  -moz-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  -o-transform: translateX(-50%);
+@media only screen and (min-width: 1024px) {
+  .section-lineup .shoe-container .shoes .shoe-name {
+    font-size: 8rem;
+  }
+}
+
+@media only screen and (min-width: 1224px) {
+  .section-lineup .shoe-container .shoes .shoe-name {
+    font-size: 4rem;
+    transform: translateY(50%);
+    -webkit-transform: translateY(50%);
+    -moz-transform: translateY(50%);
+    -ms-transform: translateY(50%);
+    -o-transform: translateY(50%);
+  }
+}
+
+@media only screen and (min-width: 1824px) {
+  .section-lineup .shoe-container .shoes .shoe-name {
+    font-size: 6rem;
+  }
 }
 
 .section-gallery {

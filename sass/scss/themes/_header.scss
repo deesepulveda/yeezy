@@ -115,7 +115,7 @@
           left: 0;
           bottom: -5%;
           @include transit3;
-          background-color: $color-dark;
+          background-color: red;
         }
 
         &:hover::after {
