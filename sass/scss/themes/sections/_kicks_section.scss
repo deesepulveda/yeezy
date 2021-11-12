@@ -1,17 +1,35 @@
 .section-kicks {
-  height: 200rem;
+  height: auto;
 
   .kicks-container {
     width: 100%;
-    height: 150rem;
+    height: auto;
     margin-top: 2rem;
     background-color: bisque;
 
+    @include tabletPortrait {
+      & {
+        margin-top: 4rem;
+      }
+    }
+
     .kick-box {
       width: 100%;
-      height: 60rem;
+      height: 70rem;
       position: relative;
       overflow: hidden;
+
+      @include phoneLandscape {
+        & {
+          height: 60rem;
+        }
+      }
+
+      @include tabletPortrait {
+        & {
+          height: 80rem;
+        }
+      }
 
       .pair-title {
         width: 100%;
@@ -23,7 +41,19 @@
         position: absolute;
         top: 5%;
         left: 0;
+        @include flex-center;
         z-index: 20;
+
+        p {
+          @include flex-center;
+        }
+
+        @include tabletPortrait {
+          & {
+            top: 2%;
+            font-size: 8rem;
+          }
+        }
       }
 
       .vid {
@@ -55,13 +85,19 @@
         -moz-transform: rotate(-15deg);
         -ms-transform: rotate(-15deg);
         -o-transform: rotate(-15deg);
+
+        @include tabletPortrait {
+          & {
+            bottom: -40%;
+          }
+        }
       }
 
       .pair-png {
         width: 110%;
         height: auto;
         position: absolute;
-        bottom: 31%;
+        bottom: 36%;
         left: 50%;
         @include transformX;
 
@@ -69,28 +105,80 @@
           @include keep-it-hundo;
           object-fit: contain;
         }
+
+        @include phoneLandscape {
+          & {
+            bottom: 24%;
+            width: 75%;
+          }
+        }
+
+        @include tabletPortrait {
+          & {
+            bottom: 28%;
+            width: 85%;
+          }
+        }
       }
 
       .content-box {
         width: 100%;
         height: auto;
-        margin-bottom: 2rem;
+        margin-bottom: 4rem;
         position: absolute;
         bottom: 0;
         left: 0;
+
+        @include phoneLandscape {
+          & {
+            margin-bottom: 1rem;
+          }
+        }
+
+        @include tabletPortrait {
+          & {
+            margin-bottom: 2rem;
+          }
+        }
 
         .content-main {
           width: 100%;
           color: red;
           font-family: $tertiary-font;
           font-size: 3rem;
+
+          @include phoneLandscape {
+            & {
+              font-size: 2.5rem;
+            }
+          }
+
+          @include tabletPortrait {
+            & {
+              font-size: 3rem;
+            }
+          }
         }
 
         .content-info {
           width: 100%;
           height: 10rem;
+          margin: 0 auto;
           padding: 0 1rem;
           @include flex-center;
+
+          @include phoneLandscape {
+            & {
+              width: 65%;
+            }
+          }
+
+          @include tabletPortrait {
+            & {
+              width: 68%;
+              margin: 1rem auto;
+            }
+          }
 
           ul {
             width: 80%;
@@ -103,6 +191,12 @@
             li {
               font-size: 1.75rem;
               text-align: start;
+
+              @include tabletPortrait {
+                & {
+                  font-size: 2.25rem;
+                }
+              }
             }
           }
         }
@@ -110,7 +204,20 @@
         .content-size {
           width: 100%;
           height: 5rem;
+          margin-top: 1rem;
           @include flex-center;
+
+          @include phoneLandscape {
+            & {
+              margin-top: 0;
+            }
+          }
+
+          @include tabletPortrait {
+            & {
+              margin-top: 2rem;
+            }
+          }
 
           .size {
             margin-right: 0.5rem;
