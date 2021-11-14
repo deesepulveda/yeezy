@@ -1,270 +1,347 @@
 .section-kicks {
   height: auto;
+  // margin-bottom: 10rem;
 
   .kicks-container {
     width: 100%;
     height: auto;
-    margin-top: 2rem;
-    background-color: bisque;
+    margin-top: 6rem;
 
-    @include tabletPortrait {
-      & {
-        margin-top: 4rem;
-      }
-    }
+    // INDIVIDUAL KICKS //
 
     .kick-box {
       width: 100%;
-      height: 70rem;
+      max-width: 150rem;
+      margin: 0 auto;
+      height: 60rem;
       position: relative;
       overflow: hidden;
 
-      @include phoneLandscape {
+      @include tabletPortrait {
         & {
-          height: 60rem;
+          height: 75rem;
         }
       }
 
-      @include tabletPortrait {
+      @include tabletLandscape {
         & {
           height: 80rem;
         }
       }
 
-      .pair-title {
-        width: 100%;
-        height: auto;
-        color: $color-lite;
-        font-size: 6rem;
-        font-family: $secondary-font;
-        text-transform: capitalize;
-        position: absolute;
-        top: 5%;
-        left: 0;
-        @include flex-center;
-        z-index: 20;
+      // Video BG
 
-        p {
-          @include flex-center;
-        }
-
-        @include tabletPortrait {
-          & {
-            top: 2%;
-            font-size: 8rem;
-          }
-        }
-      }
-
-      .vid {
+      .vid-box {
         width: 150%;
         height: 150%;
-        object-fit: cover;
-        position: absolute;
-        bottom: 0;
-        left: 0;
+
+        &::after {
+          content: "";
+          @include keep-it-hundo;
+          @include absol-topLeftZero;
+          background-color: $color-dark;
+          opacity: 0.9;
+          z-index: -1;
+        }
+
+        .vid {
+          width: 150%;
+          height: 150%;
+          object-fit: cover;
+          position: relative;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          z-index: -1;
+        }
       }
 
-      .overlay {
-        width: 150%;
-        height: 150%;
-        @include absol-topLeftZero;
-        background-color: $color-dark;
-        opacity: 0.85;
-      }
+      // Polygon Shape
 
       .bg-slant {
         width: 200%;
         height: 100%;
         background-color: $color-lite;
         position: absolute;
-        bottom: -45%;
+        bottom: -40%;
         left: -20%;
         transform: rotate(-15deg);
         -webkit-transform: rotate(-15deg);
         -moz-transform: rotate(-15deg);
         -ms-transform: rotate(-15deg);
         -o-transform: rotate(-15deg);
-
-        @include tabletPortrait {
-          & {
-            bottom: -40%;
-          }
-        }
       }
 
-      .pair-png {
-        width: 110%;
+      // Shoe Title
+
+      .pair-title {
+        width: 100%;
         height: auto;
+        color: $color-lite;
+        font-size: 5rem;
+        // letter-spacing: 0.5rem;
+        font-family: $secondary-font;
+        text-transform: capitalize;
         position: absolute;
-        bottom: 36%;
+        top: 3%;
         left: 50%;
         @include transformX;
 
-        img {
-          @include keep-it-hundo;
-          object-fit: contain;
-        }
-
-        @include phoneLandscape {
+        @include tabletPortrait {
           & {
-            bottom: 24%;
-            width: 75%;
+            font-size: 7rem;
           }
         }
 
-        @include tabletPortrait {
+        @include desktop {
           & {
-            bottom: 28%;
-            width: 85%;
+            font-size: 9rem;
+          }
+        }
+
+        p {
+          @include flex-center;
+
+          @include desktop {
+            & {
+              justify-content: flex-end;
+              padding-right: 8rem;
+            }
           }
         }
       }
 
-      .content-box {
-        width: 100%;
-        height: auto;
-        margin-bottom: 4rem;
-        position: absolute;
-        bottom: 0;
-        left: 0;
+      // Shoe IMG and Info Box
 
-        @include phoneLandscape {
+      .kicks-content-box {
+        width: 90%;
+        height: 100%;
+        position: relative;
+        @include absol-center;
+
+        @include desktop {
           & {
-            margin-bottom: 1rem;
+            width: 100%;
           }
         }
 
-        @include tabletPortrait {
-          & {
-            margin-bottom: 2rem;
-          }
-        }
+        // Shoe IMG
 
-        .content-main {
-          width: 100%;
-          color: red;
-          font-family: $tertiary-font;
-          font-size: 3rem;
+        .pair-png-box {
+          width: 110%;
+          height: auto;
+          position: absolute;
+          top: 25%;
+          left: 50%;
+          @include transformX;
 
           @include phoneLandscape {
             & {
-              font-size: 2.5rem;
+              width: 90%;
+              top: 20%;
             }
           }
 
           @include tabletPortrait {
             & {
-              font-size: 3rem;
+              width: 95%;
+              top: 17%;
             }
+          }
+
+          @include tabletLandscape {
+            & {
+              width: 75%;
+              top: 20%;
+            }
+          }
+
+          @include desktop {
+            & {
+              width: 60%;
+              left: 30%;
+              top: 28%;
+            }
+          }
+
+          img {
+            @include keep-it-hundo;
+            object-fit: contain;
           }
         }
 
-        .content-info {
+        // Shoe Info and Size
+
+        .inner-content-box {
           width: 100%;
-          height: 10rem;
-          margin: 0 auto;
-          padding: 0 1rem;
-          @include flex-center;
+          height: 30%;
+          position: absolute;
+          bottom: 5%;
+          left: 50%;
+          @include transformX;
 
           @include phoneLandscape {
             & {
-              width: 65%;
+              bottom: 2%;
             }
           }
 
-          @include tabletPortrait {
+          @include tabletLandscape {
             & {
-              width: 68%;
-              margin: 1rem auto;
+              bottom: 0;
             }
           }
 
-          ul {
-            width: 80%;
-            display: flex;
-            padding-left: 1rem;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
+          @include desktop {
+            & {
+              width: 40%;
+              height: 42%;
+              left: 78%;
+              bottom: 10%;
+              @include flex-center-col;
+            }
+          }
 
-            li {
-              font-size: 1.75rem;
-              text-align: start;
+          .content-main {
+            width: 100%;
+            color: red;
+            font-family: $tertiary-font;
+            font-size: 3rem;
+
+            @include desktop {
+              & {
+                width: 80%;
+                text-align: start;
+                font-size: 4.5rem;
+              }
+            }
+          }
+
+          // Shoe Info
+
+          .content-info {
+            width: 100%;
+            height: 50%;
+
+            @include phoneLandscape {
+              & {
+                @include flex-center;
+              }
+            }
+
+            ul {
+              @include keep-it-hundo;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: flex-start;
+
+              @include phoneLandscape {
+                & {
+                  width: 60%;
+                }
+              }
 
               @include tabletPortrait {
                 & {
-                  font-size: 2.25rem;
+                  padding-left: 1rem;
+                }
+              }
+
+              @include tabletLandscape {
+                & {
+                  padding-left: 8rem;
+                }
+              }
+
+              @include desktop {
+                & {
+                  width: 80%;
+                  padding-left: 0;
+                }
+              }
+
+              li {
+                margin-left: 1.5rem;
+                font-size: 1.65rem;
+                text-align: start;
+
+                @include tabletPortrait {
+                  & {
+                    font-size: 2rem;
+                  }
+                }
+
+                @include desktop {
+                  & {
+                    font-size: 2.5rem;
+                  }
                 }
               }
             }
           }
-        }
 
-        .content-size {
-          width: 100%;
-          height: 5rem;
-          margin-top: 1rem;
-          @include flex-center;
+          // Shoe Size
 
-          @include phoneLandscape {
-            & {
-              margin-top: 0;
-            }
-          }
-
-          @include tabletPortrait {
-            & {
-              margin-top: 2rem;
-            }
-          }
-
-          .size {
-            margin-right: 0.5rem;
-            font-size: 2.5rem;
-          }
-
-          .shoe-sizes {
+          .content-size {
+            width: 100%;
+            height: 5rem;
             @include flex-center;
 
-            .size-li {
-              width: 3rem;
-              height: 3rem;
-              position: relative;
-              list-style-type: none;
-              font-size: 2rem;
-              margin-left: 0.5rem;
+            @include desktop {
+              & {
+                width: 80%;
+                justify-content: flex-end;
+              }
+            }
+
+            .size {
+              margin-right: 0.5rem;
+              font-size: 2.5rem;
+            }
+
+            .shoe-sizes {
               @include flex-center;
-              @include transit3;
-              cursor: pointer;
-              border: 0.1rem solid $color-dark;
-              border-radius: 0.25rem;
-              -webkit-border-radius: 0.25rem;
-              -moz-border-radius: 0.25rem;
-              -ms-border-radius: 0.25rem;
-              -o-border-radius: 0.25rem;
 
-              &::after {
-                content: "out of stock";
-                width: 400%;
-                height: auto;
-                display: none;
-                font-family: $tertiary-font;
-                font-size: 1.5rem;
-                color: red;
-                position: absolute;
-                top: -80%;
-                left: 50%;
-                @include transformX;
-              }
+              .size-li {
+                width: 3rem;
+                height: 3rem;
+                position: relative;
+                list-style-type: none;
+                font-size: 2rem;
+                margin-left: 0.5rem;
+                @include flex-center;
+                @include transit3;
+                cursor: pointer;
+                border: 0.1rem solid $color-dark;
+                border-radius: 0.25rem;
+                -webkit-border-radius: 0.25rem;
+                -moz-border-radius: 0.25rem;
+                -ms-border-radius: 0.25rem;
+                -o-border-radius: 0.25rem;
 
-              &:hover::after {
-                display: block;
-              }
+                &::after {
+                  content: "out of stock";
+                  width: 400%;
+                  height: auto;
+                  display: none;
+                  font-family: $tertiary-font;
+                  font-size: 1.5rem;
+                  color: red;
+                  position: absolute;
+                  top: -80%;
+                  left: 50%;
+                  @include transformX;
+                }
 
-              &:hover {
-                background-color: $color-dark;
-                color: $color-lite;
+                &:hover::after {
+                  display: block;
+                }
+
+                &:hover {
+                  background-color: $color-dark;
+                  color: $color-lite;
+                }
               }
             }
           }
