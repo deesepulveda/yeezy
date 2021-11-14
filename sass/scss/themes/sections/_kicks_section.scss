@@ -1,6 +1,6 @@
 .section-kicks {
   height: auto;
-  // margin-bottom: 10rem;
+  margin-bottom: 10rem;
 
   .kicks-container {
     width: 100%;
@@ -34,13 +34,14 @@
       .vid-box {
         width: 150%;
         height: 150%;
+        position: relative;
 
         &::after {
           content: "";
           @include keep-it-hundo;
           @include absol-topLeftZero;
           background-color: $color-dark;
-          opacity: 0.9;
+          opacity: 0.85;
           z-index: -1;
         }
 
@@ -48,11 +49,16 @@
           width: 150%;
           height: 150%;
           object-fit: cover;
-          position: relative;
           position: absolute;
           bottom: 0;
           left: 0;
           z-index: -1;
+
+          @include desktop {
+            & {
+              left: -40%;
+            }
+          }
         }
       }
 
