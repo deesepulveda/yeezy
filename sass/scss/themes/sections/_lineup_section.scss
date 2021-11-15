@@ -4,20 +4,19 @@
 
   .shoe-container {
     @include keep-it-hundo;
-    // max-width: 120rem;
+    // max-width: 150rem;
     margin: 0 auto;
 
     @include desktop {
       & {
         @include flex-center;
-        width: 120rem;
         margin: 0 auto 6rem;
       }
     }
 
     @include largeDesktop {
       & {
-        width: 200rem;
+        max-width: 200rem;
       }
     }
 
@@ -88,6 +87,36 @@
           -moz-transform: translateY(35%);
           -ms-transform: translateY(35%);
           -o-transform: translateY(35%);
+
+          @include tabletPortraitLarge {
+            & {
+              transform: translateY(65%);
+              -webkit-transform: translateY(65%);
+              -moz-transform: translateY(65%);
+              -ms-transform: translateY(65%);
+              -o-transform: translateY(65%);
+            }
+          }
+
+          @include desktop {
+            & {
+              transform: translateY(60%);
+              -webkit-transform: translateY(60%);
+              -moz-transform: translateY(60%);
+              -ms-transform: translateY(60%);
+              -o-transform: translateY(60%);
+            }
+          }
+
+          @include largeDesktop {
+            & {
+              transform: translateY(70%);
+              -webkit-transform: translateY(70%);
+              -moz-transform: translateY(70%);
+              -ms-transform: translateY(70%);
+              -o-transform: translateY(70%);
+            }
+          }
         }
 
         &:hover ~ .stripe-logo::after {
@@ -123,6 +152,18 @@
               width: 60%;
             }
           }
+
+          @include tabletPortrait {
+            & {
+              width: 80%;
+            }
+          }
+
+          @include largeDesktop {
+            & {
+              width: 85%;
+            }
+          }
         }
       }
 
@@ -133,7 +174,7 @@
         height: 70%;
         position: relative;
         position: absolute;
-        top: 15%;
+        top: 13%;
         left: 50%;
         overflow: hidden;
         @include transformX;
@@ -145,16 +186,42 @@
           }
         }
 
+        @include tabletPortrait {
+          & {
+            width: 52%;
+          }
+        }
+
+        @include desktop {
+          & {
+            width: 72%;
+            top: 20%;
+          }
+        }
+
+        @include largeDesktop {
+          & {
+            width: 80%;
+            top: 25%;
+          }
+        }
+
+        @include XlargeDesktop {
+          & {
+            width: 75%;
+            top: 17%;
+          }
+        }
+
         &::after {
           content: "";
-          width: 300%;
+          width: 200%;
           height: 100%;
           position: absolute;
           top: 0;
           left: -100%;
           @include transitDelay;
           background-color: $color-lite;
-          // background: linear-gradient(to left, #fff, rgba(255, 255, 255, 0));
         }
 
         .stripe-bg {
@@ -192,7 +259,6 @@
 
         @include desktop {
           & {
-            z-index: 7;
             font-size: 4rem;
             transform: translateY(50%);
             -webkit-transform: translateY(50%);

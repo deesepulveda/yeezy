@@ -1,14 +1,22 @@
 // ACTIVATE STRICT MODE
+
 "use strict";
 
-// HEADER //
+// HEADER, NAV & BURGER
 
-// const header = document.querySelector(".header");
-// const hero = document.querySelector(".hero");
+const navMenu = document.getElementById("nav-main");
+const burger = document.getElementById("burger");
+const cheese = document.getElementById("cheese");
+const topBun = document.getElementById("top");
+const meat = document.getElementById("meat");
+const bottomBun = document.getElementById("bottom");
 
-// window.addEventListener("scroll", () => {
-//   header.classList.toggle("headerChange", window.scrollY > hero.scrollHeight);
-// });
+cheese.addEventListener("click", () => {
+  navMenu.classList.toggle("showNav");
+  topBun.classList.toggle("topChange");
+  meat.classList.toggle("meatGone");
+  bottomBun.classList.toggle("bottomChange");
+});
 
 //  SECTIONS //
 
