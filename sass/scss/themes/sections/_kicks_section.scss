@@ -1,6 +1,12 @@
 .section-kicks {
   height: auto;
-  margin-bottom: 10rem;
+  margin-bottom: 2rem;
+
+  @include desktop {
+    & {
+      margin-bottom: 10rem;
+    }
+  }
 
   .kicks-container {
     width: 100%;
@@ -12,7 +18,7 @@
     .kick-box {
       width: 100%;
       max-width: 150rem;
-      margin: 0 auto;
+      margin: 0 auto 10rem;
       height: 60rem;
       position: relative;
       overflow: hidden;

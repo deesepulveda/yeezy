@@ -1,5 +1,6 @@
 .section-lineup {
   height: auto;
+  margin-top: 5rem;
 
   .shoe-container {
     @include keep-it-hundo;
@@ -64,15 +65,33 @@
         height: 70%;
         position: absolute;
         bottom: 0;
-        z-index: 5;
+        z-index: 10;
+        // filter: drop-shadow(0.1rem 0.1rem 0.5rem #050505a1);
+        // -webkit-filter: drop-shadow(0.1rem 0.1rem 0.5rem #050505a1);
+
+        &::after {
+          content: "";
+          width: 90%;
+          height: 90%;
+          position: absolute;
+          top: -20%;
+          left: 50%;
+          @include transformX;
+          @include transit3;
+          z-index: -1;
+        }
 
         &:hover ~ .shoe-name {
           opacity: 1;
-          transform: translateY(0);
-          -webkit-transform: translateY(0);
-          -moz-transform: translateY(0);
-          -ms-transform: translateY(0);
-          -o-transform: translateY(0);
+          transform: translateY(35%);
+          -webkit-transform: translateY(35%);
+          -moz-transform: translateY(35%);
+          -ms-transform: translateY(35%);
+          -o-transform: translateY(35%);
+        }
+
+        &:hover ~ .stripe-logo::after {
+          left: 200%;
         }
 
         @include phoneLandscape {
@@ -98,8 +117,53 @@
           bottom: 10%;
           left: 50%;
           @include transformX;
+
+          @include phoneLandscape {
+            & {
+              width: 60%;
+            }
+          }
         }
       }
+
+      // Stripe Logo //
+
+      .stripe-logo {
+        width: 80%;
+        height: 70%;
+        position: relative;
+        position: absolute;
+        top: 15%;
+        left: 50%;
+        overflow: hidden;
+        @include transformX;
+        @include transit3;
+
+        @include phoneLandscape {
+          & {
+            width: 40%;
+          }
+        }
+
+        &::after {
+          content: "";
+          width: 300%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: -100%;
+          @include transitDelay;
+          background-color: $color-lite;
+          // background: linear-gradient(to left, #fff, rgba(255, 255, 255, 0));
+        }
+
+        .stripe-bg {
+          @include keep-it-hundo;
+          object-fit: contain;
+        }
+      }
+
+      // Shoe Name //
 
       .shoe-name {
         opacity: 0;
@@ -107,7 +171,7 @@
         text-transform: capitalize;
         font-size: 5rem;
         @include transit3;
-        z-index: -1;
+        z-index: 5;
         transform: translateY(200%);
         -webkit-transform: translateY(200%);
         -moz-transform: translateY(200%);
@@ -128,6 +192,7 @@
 
         @include desktop {
           & {
+            z-index: 7;
             font-size: 4rem;
             transform: translateY(50%);
             -webkit-transform: translateY(50%);
