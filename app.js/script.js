@@ -18,6 +18,14 @@ cheese.addEventListener("click", () => {
   bottomBun.classList.toggle("bottomChange");
 });
 
+const navLinks = document.querySelectorAll(".nav-li");
+
+navLinks.forEach((l) => {
+  l.addEventListener("click", () => {
+    navMenu.classList.remove("showNav");
+  });
+});
+
 //  SECTIONS //
 
 const bgImg = document.querySelector(".bg-img");

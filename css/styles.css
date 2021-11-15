@@ -1123,6 +1123,9 @@ body {
 .section-kicks .kicks-container .kick-box .kicks-content-box .inner-content-box .content-info {
   width: 100%;
   height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media only screen and (min-width: 620px) {
@@ -1134,7 +1137,7 @@ body {
 }
 
 .section-kicks .kicks-container .kick-box .kicks-content-box .inner-content-box .content-info ul {
-  width: 100%;
+  width: 80%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -1264,7 +1267,6 @@ body {
 
 .section-contact {
   height: 100rem;
-  background: sandybrown;
 }
 
 footer {
