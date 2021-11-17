@@ -23,6 +23,9 @@ const navLinks = document.querySelectorAll(".nav-li");
 navLinks.forEach((l) => {
   l.addEventListener("click", () => {
     navMenu.classList.remove("showNav");
+    topBun.classList.remove("topChange");
+    meat.classList.remove("meatGone");
+    bottomBun.classList.remove("bottomChange");
   });
 });
 
