@@ -126,6 +126,7 @@
   }
 
   .modal-container {
+    display: none;
     width: 0;
     height: 0;
     position: relative;
@@ -166,6 +167,13 @@
       height: 80%;
       @include absol-center;
 
+      @include desktop {
+        & {
+          width: 75%;
+          height: 75%;
+        }
+      }
+
       .modal-img {
         @include keep-it-hundo;
         object-fit: cover;
@@ -174,6 +182,7 @@
   }
 
   .modalOpen {
+    display: block;
     width: 100%;
     height: 100%;
   }
