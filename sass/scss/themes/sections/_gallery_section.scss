@@ -75,6 +75,7 @@
         object-fit: cover;
         @include transit3;
         cursor: pointer;
+        outline: none;
       }
 
       @include tabletPortrait {
@@ -127,13 +128,12 @@
   .modal-container {
     width: 0;
     height: 0;
-    // overflow: hidden;
     position: relative;
     position: fixed;
     top: 0;
     left: 0;
-    // @include flex-center-col;
     z-index: 100;
+    // @include transit3;
 
     &::after {
       content: "";
@@ -152,6 +152,7 @@
       font-size: 3rem;
       color: $color-lite;
       cursor: pointer;
+      @include transit3;
 
       @include tabletLandscapeLarge {
         & {
