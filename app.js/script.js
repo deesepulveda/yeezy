@@ -1,8 +1,8 @@
-// ACTIVATE STRICT MODE
+// ACTIVATE STRICT MODE //
 
 "use strict";
 
-// HEADER, NAV & BURGER
+// HEADER, NAV & BURGER //
 
 const navMenu = document.getElementById("nav-main");
 const burger = document.getElementById("burger");
@@ -10,6 +10,7 @@ const cheese = document.getElementById("cheese");
 const topBun = document.getElementById("top");
 const meat = document.getElementById("meat");
 const bottomBun = document.getElementById("bottom");
+const navLinks = document.querySelectorAll(".nav-li");
 
 cheese.addEventListener("click", () => {
   navMenu.classList.toggle("showNav");
@@ -17,8 +18,6 @@ cheese.addEventListener("click", () => {
   meat.classList.toggle("meatGone");
   bottomBun.classList.toggle("bottomChange");
 });
-
-const navLinks = document.querySelectorAll(".nav-li");
 
 navLinks.forEach((l) => {
   l.addEventListener("click", () => {
@@ -51,30 +50,30 @@ const creatorSect = document.querySelector(".section-creator");
 //   });
 // }
 
-// LINE UP SECTION //
-
-const turtle = document.querySelector(".turtle-img");
-const pirate = document.querySelector(".pirate-img");
-const moonRock = document.querySelector(".moonrock-img");
-const oxfordTan = document.querySelector(".oxford-img");
-const turtleName = document.querySelector(".turtle-name");
-const pirateName = document.querySelector(".pirate-name");
-const moonRockName = document.querySelector(".moonrock-name");
-const OxfordTanName = document.querySelector(".oxford-name");
-
-const matchingMedia = matchMedia("(min-width: 1224px)");
-matchingMedia.addEventListener("change", () => {
-  console.log(matchingMedia);
-});
-
 // GALLERY SECTION //
 
-const lineUpSect = document.querySelector(".section-lineup");
-const galleryImgs = document.querySelectorAll(".gallery-img-box");
+const lineUpSect = document.querySelector(".section-gallery");
+const galleryImgBox = document.querySelectorAll(".gallery-img-box");
 const galleryImage = document.querySelectorAll(".gallery-img");
+const modalContainer = document.querySelector(".modal-container");
+const modalImgBox = document.querySelector(".modal-img-box");
+const modalImg = document.querySelector(".modal-img");
+const closeModal = document.querySelector(".far");
 
-window.addEventListener("scroll", () => {
-  galleryImgs.forEach((element) => {
-    element.classList.add("zoomIn", window.scrollY > 2500);
+// IMAGES / OPEN MODAL //
+
+galleryImage.forEach((i) => {
+  i.addEventListener("click", (e) => {
+    const currentImages = e.currentTarget.src;
+    modalImg.src = currentImages;
+    modalContainer.classList.add("modalOpen");
+    closeModal.style.display = "block";
   });
+});
+
+// CLOSE MODAL //
+
+closeModal.addEventListener("click", () => {
+  modalContainer.classList.remove("modalOpen");
+  closeModal.style.display = "none";
 });

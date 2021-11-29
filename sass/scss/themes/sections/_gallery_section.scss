@@ -37,6 +37,7 @@
     // max-width: 120rem;
     height: 85%;
     margin: 5rem auto 0;
+    position: relative;
 
     @include tabletPortrait {
       & {
@@ -63,10 +64,18 @@
     .gallery-img-box {
       width: 100%;
       height: calc(100% / 8);
+      position: relative;
       @include transit3;
       padding: 0.5rem 0.5rem 0rem 0.5rem;
       overflow: hidden;
-      opacity: 0;
+      opacity: 1;
+
+      .gallery-img {
+        @include keep-it-hundo;
+        object-fit: cover;
+        @include transit3;
+        cursor: pointer;
+      }
 
       @include tabletPortrait {
         & {
@@ -112,37 +121,59 @@
       &:nth-of-type(8) {
         animation-delay: 2600ms;
       }
+    }
+  }
 
-      .gallery-img {
+  .modal-container {
+    width: 0;
+    height: 0;
+    // overflow: hidden;
+    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    // @include flex-center-col;
+    z-index: 100;
+
+    &::after {
+      content: "";
+      @include keep-it-hundo;
+      @include absol-topLeftZero;
+      background-color: $color-dark;
+      opacity: 0.7;
+      z-index: -1;
+    }
+
+    .far {
+      display: none;
+      position: absolute;
+      top: 2%;
+      right: 5%;
+      font-size: 3rem;
+      color: $color-lite;
+      cursor: pointer;
+
+      @include tabletLandscapeLarge {
+        & {
+          font-size: 5rem;
+        }
+      }
+    }
+
+    .modal-img-box {
+      width: 90%;
+      height: 80%;
+      @include absol-center;
+
+      .modal-img {
         @include keep-it-hundo;
         object-fit: cover;
-        @include transit3;
       }
     }
   }
-}
 
-.zoomIn {
-  animation: effectOne 0.5s ease-in-out 0.5s forwards;
-  -webkit-animation: effectOne 0.5s ease-in-out 0.5s forwards;
-}
-
-@keyframes effectOne {
-  0% {
-    opacity: 0;
-    transform: scale(0);
-    -webkit-transform: scale(0);
-    -moz-transform: scale(0);
-    -ms-transform: scale(0);
-    -o-transform: scale(0);
-  }
-
-  100% {
-    opacity: 1;
-    transform: scale(1);
-    -webkit-transform: scale(1);
-    -moz-transform: scale(1);
-    -ms-transform: scale(1);
-    -o-transform: scale(1);
+  .modalOpen {
+    width: 100%;
+    height: 100%;
   }
 }

@@ -22,21 +22,21 @@
       width: 100%;
       height: 0.5rem;
       background-color: red;
-      @include transit6;
+      @include transit3;
     }
 
     .meat {
       width: 100%;
       height: 0.5rem;
       background-color: red;
-      @include transit6;
+      @include transit3;
     }
 
     .bottom {
       width: 100%;
       height: 0.5rem;
       background-color: red;
-      @include transit6;
+      @include transit3;
     }
   }
 }
