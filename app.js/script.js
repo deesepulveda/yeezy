@@ -2,7 +2,7 @@
 
 "use strict";
 
-// HEADER, NAV & BURGER //
+// ---- HEADER, NAV & BURGER ---- //
 
 const navMenu = document.getElementById("nav-main");
 const burger = document.getElementById("burger");
@@ -28,31 +28,38 @@ navLinks.forEach((l) => {
   });
 });
 
-//  SECTIONS //
+// ---- CREATOER SECTION ---- //
+
+// Parallax Effect
 
 const bgImg = document.querySelector(".bg-img");
 const creatorSect = document.querySelector(".section-creator");
+const creatorImgBox = document.querySelector(".bg-img-box");
 
-// function scrolled() {
-//   window.addEventListener("scroll", () => {
-//     let rate = window.pageYOffset;
-//     let speed = rate + 0.05 + "px";
-//     bgImg.style.transform = `translateY(-${speed})`;
-//   });
-// }
+// let observerOne = new IntersectionObserver((entries) => {
+//   console.log(entries);
+//   if (entries.intersectionRatio > 0) {
+//     window.addEventListener("scroll", () => {
+//       let rate = window.pageYOffset;
+//       let speed = rate * 0.2 + "px";
 
-// if (window.scrollY > 200) {
-//   console.log("It Works!");
-//   window.addEventListener("scroll", () => {
-//     let rate = window.pageYOffset;
-//     let speed = rate + 0.05 + "px";
-//     bgImg.style.transform = `translateY(-${speed})`;
-//   });
-// }
+//       entries.target.style.transform = `translateY(-${speed})`;
+//     });
+//   }
+// });
 
-// GALLERY SECTION //
+// observerOne.observe(creatorImgBox);
 
-const lineUpSect = document.querySelector(".section-gallery");
+window.addEventListener("scroll", () => {
+  let rate = window.pageYOffset;
+  let speed = rate * 0.2 + "px";
+
+  creatorImgBox.style.transform = `translateY(-${speed})`;
+});
+
+// ---- GALLERY SECTION ---- //
+
+const gallerySect = document.querySelector(".section-gallery");
 const galleryImgBox = document.querySelectorAll(".gallery-img-box");
 const galleryImage = document.querySelectorAll(".gallery-img");
 const modalContainer = document.querySelector(".modal-container");
@@ -60,7 +67,25 @@ const modalImgBox = document.querySelector(".modal-img-box");
 const modalImg = document.querySelector(".modal-img");
 const closeModal = document.querySelector(".far");
 
-// IMAGES / OPEN MODAL //
+// Animation Effect
+
+let observer = new IntersectionObserver((entries) => {
+  // console.log(entries);
+  entries.forEach((entry) => {
+    if (entry.intersectionRatio > 0) {
+      entry.target.style.animation =
+        "galleryAnimation .8s ease-in-out forwards";
+    } else {
+      entry.target.style.animation = "none";
+    }
+  });
+});
+
+galleryImgBox.forEach((box) => {
+  observer.observe(box);
+});
+
+// Images / Open Modal
 
 galleryImage.forEach((i) => {
   i.addEventListener("click", (e) => {
@@ -71,7 +96,7 @@ galleryImage.forEach((i) => {
   });
 });
 
-// CLOSE MODAL //
+// Close Modal
 
 closeModal.addEventListener("click", () => {
   modalContainer.classList.remove("modalOpen");

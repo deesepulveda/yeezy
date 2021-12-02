@@ -1,11 +1,12 @@
 .section-creator {
   height: 70rem;
   position: relative;
-  background-image: url(../public/images/KanyeAdidasAd.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
+  overflow: hidden;
+  // background-image: url(../public/images/KanyeAdidasAd.png);
+  // background-position: center;
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  // background-attachment: fixed;
 
   @include tabletPortrait {
     & {
@@ -32,6 +33,17 @@
     left: 0;
     bottom: 5%;
     background-color: $color-lite;
+  }
+
+  .bg-img-box {
+    @include keep-it-hundo;
+    @include absol-topLeftZero;
+
+    .bg-img {
+      // @include keep-it-hundo;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 
   .overlay {

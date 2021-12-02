@@ -213,6 +213,12 @@
           }
         }
 
+        @include fullHDDesktop {
+          & {
+            top: 17%;
+          }
+        }
+
         &::after {
           content: "";
           width: 200%;
