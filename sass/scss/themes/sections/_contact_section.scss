@@ -1,3 +1,98 @@
 .section-contact {
   height: 50rem;
+
+  .form-wrapper {
+    width: 100%;
+    height: auto;
+    margin: 5rem auto 0;
+    @include flex-center-col;
+
+    @include tabletPortrait {
+      & {
+        width: 70rem;
+      }
+    }
+
+    .form-box {
+      @include keep-it-hundo;
+      @include flex-center-col;
+
+      .input-box {
+        width: 70%;
+        height: 3rem;
+        position: relative;
+        border: 0.1rem solid $color-dark;
+
+        &:nth-of-type(1)::after {
+          content: "First Name";
+          height: 100%;
+          // position: relative;
+          margin-left: 0.5rem;
+          @include absol-topLeftZero;
+          font-size: 1.5rem;
+          color: gray;
+          z-index: -1;
+        }
+
+        &:nth-of-type(2)::after {
+          content: "Last Name";
+          height: 100%;
+          // position: relative;
+          margin-left: 0.5rem;
+          @include absol-topLeftZero;
+          font-size: 1.5rem;
+          color: gray;
+          z-index: -1;
+        }
+
+        &:nth-of-type(3)::after {
+          content: "Email";
+          height: 100%;
+          // position: relative;
+          margin-left: 0.5rem;
+          @include absol-topLeftZero;
+          font-size: 1.5rem;
+          color: gray;
+          z-index: -1;
+        }
+
+        &:not(:last-child) {
+          margin-bottom: 3rem;
+        }
+
+        input {
+          @include keep-it-hundo;
+          background: transparent;
+          border: none;
+        }
+
+        .firstname {
+          // background-color: red;
+          position: relative;
+        }
+      }
+    }
+
+    .btn-box {
+      width: 70%;
+      margin-top: 4rem;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+
+      .submit {
+        padding: 0.75rem 2rem;
+        text-decoration: none;
+        color: $color-dark;
+        font-size: 2rem;
+        border: 0.1rem solid $color-dark;
+        @include transit3;
+
+        &:hover {
+          color: $color-lite;
+          background-color: $color-dark;
+        }
+      }
+    }
+  }
 }

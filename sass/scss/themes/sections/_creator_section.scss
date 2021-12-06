@@ -40,8 +40,7 @@
     @include absol-topLeftZero;
 
     .bg-img {
-      // @include keep-it-hundo;
-      height: 100%;
+      @include keep-it-hundo;
       object-fit: cover;
     }
   }

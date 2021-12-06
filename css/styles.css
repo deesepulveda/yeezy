@@ -397,6 +397,7 @@ body {
 }
 
 .section-creator .bg-img-box .bg-img {
+  width: 100%;
   height: 100%;
   object-fit: cover;
 }
@@ -1365,6 +1366,115 @@ body {
 
 .section-contact {
   height: 50rem;
+}
+
+.section-contact .form-wrapper {
+  width: 100%;
+  height: auto;
+  margin: 5rem auto 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+@media only screen and (min-width: 768px) {
+  .section-contact .form-wrapper {
+    width: 70rem;
+  }
+}
+
+.section-contact .form-wrapper .form-box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.section-contact .form-wrapper .form-box .input-box {
+  width: 70%;
+  height: 3rem;
+  position: relative;
+  border: 0.1rem solid #050505;
+}
+
+.section-contact .form-wrapper .form-box .input-box:nth-of-type(1)::after {
+  content: "First Name";
+  height: 100%;
+  margin-left: 0.5rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 1.5rem;
+  color: gray;
+  z-index: -1;
+}
+
+.section-contact .form-wrapper .form-box .input-box:nth-of-type(2)::after {
+  content: "Last Name";
+  height: 100%;
+  margin-left: 0.5rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 1.5rem;
+  color: gray;
+  z-index: -1;
+}
+
+.section-contact .form-wrapper .form-box .input-box:nth-of-type(3)::after {
+  content: "Email";
+  height: 100%;
+  margin-left: 0.5rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 1.5rem;
+  color: gray;
+  z-index: -1;
+}
+
+.section-contact .form-wrapper .form-box .input-box:not(:last-child) {
+  margin-bottom: 3rem;
+}
+
+.section-contact .form-wrapper .form-box .input-box input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+}
+
+.section-contact .form-wrapper .form-box .input-box .firstname {
+  position: relative;
+}
+
+.section-contact .form-wrapper .btn-box {
+  width: 70%;
+  margin-top: 4rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.section-contact .form-wrapper .btn-box .submit {
+  padding: 0.75rem 2rem;
+  text-decoration: none;
+  color: #050505;
+  font-size: 2rem;
+  border: 0.1rem solid #050505;
+  transition: 0.3s ease;
+  -webkit-transition: 0.3s ease;
+  -moz-transition: 0.3s ease;
+  -ms-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
+}
+
+.section-contact .form-wrapper .btn-box .submit:hover {
+  color: #fff;
+  background-color: #050505;
 }
 
 footer {
