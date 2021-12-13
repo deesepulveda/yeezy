@@ -68,6 +68,10 @@
         }
       }
 
+      .vid-box-opac::after {
+        opacity: 0.6;
+      }
+
       // Polygon Shape
 
       .bg-slant {
