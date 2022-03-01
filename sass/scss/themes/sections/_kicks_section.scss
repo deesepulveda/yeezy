@@ -47,7 +47,7 @@
           @include keep-it-hundo;
           @include absol-topLeftZero;
           background-color: $color-dark;
-          opacity: 0.78;
+          opacity: 0.8;
           z-index: -1;
         }
 
@@ -68,8 +68,10 @@
         }
       }
 
+      // Video BG - Lighter Opacity
+
       .vid-box-opac::after {
-        opacity: 0.6;
+        opacity: 0.65;
       }
 
       // Polygon Shape

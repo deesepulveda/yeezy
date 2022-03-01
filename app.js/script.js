@@ -30,29 +30,15 @@ navLinks.forEach((l) => {
 
 // ---- CREATOER SECTION ---- //
 
-// Parallax Effect
-
 const bgImg = document.querySelector(".bg-img");
 const creatorSect = document.querySelector(".section-creator");
 const creatorImgBox = document.querySelector(".bg-img-box");
 
-// let observerOne = new IntersectionObserver((entries) => {
-//   console.log(entries);
-//   if (entries.intersectionRatio > 0) {
-//     window.addEventListener("scroll", () => {
-//       let rate = window.pageYOffset;
-//       let speed = rate * 0.2 + "px";
-
-//       entries.target.style.transform = `translateY(-${speed})`;
-//     });
-//   }
-// });
-
-// observerOne.observe(creatorImgBox);
+// Parallax Effect
 
 window.addEventListener("scroll", () => {
   let rate = window.pageYOffset;
-  let speed = rate * 0.2 + "px";
+  let speed = rate * 0.3 + "px";
 
   creatorImgBox.style.transform = `translateY(-${speed})`;
 });
@@ -69,20 +55,25 @@ const closeModal = document.querySelector(".far");
 
 // Animation Effect
 
-let observer = new IntersectionObserver((entries) => {
-  // console.log(entries);
-  entries.forEach((entry) => {
-    if (entry.intersectionRatio > 0) {
-      entry.target.style.animation =
-        "galleryAnimation .8s ease-in-out forwards";
-    } else {
-      entry.target.style.animation = "none";
-    }
-  });
-});
+const observerFunc = function (entries) {
+  const [entry] = entries;
+  console.log(entry);
 
-galleryImgBox.forEach((box) => {
-  observer.observe(box);
+  entry.target.classList.toggle("galleryAnimateIn", entry.isIntersecting);
+
+  if (entry.isIntersecting) galleryObs.unobserve(entry.target);
+};
+
+const observerOptions = {
+  root: null,
+  threshold: 0.1,
+  // rootMargin: "-50px",
+};
+
+const galleryObs = new IntersectionObserver(observerFunc, observerOptions);
+
+galleryImgBox.forEach((g) => {
+  galleryObs.observe(g);
 });
 
 // Images / Open Modal

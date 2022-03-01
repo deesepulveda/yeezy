@@ -38,10 +38,16 @@
   .bg-img-box {
     @include keep-it-hundo;
     @include absol-topLeftZero;
+    position: relative;
 
     .bg-img {
       @include keep-it-hundo;
+      // height: 150%;
       object-fit: cover;
+      // position: absolute;
+      // top: 20%;
+      // left: 50%;
+      // @include transformX;
     }
   }
 
