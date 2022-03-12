@@ -4,6 +4,7 @@
 
 // ---- HEADER, NAV & BURGER ---- //
 
+const logoImg = document.querySelector(".logo-main");
 const navMenu = document.getElementById("nav-main");
 const burger = document.getElementById("burger");
 const cheese = document.getElementById("cheese");
@@ -28,7 +29,7 @@ navLinks.forEach((l) => {
   });
 });
 
-// ---- CREATOER SECTION ---- //
+// ---- CREATOR SECTION ---- //
 
 const bgImg = document.querySelector(".bg-img");
 const creatorSect = document.querySelector(".section-creator");
@@ -41,6 +42,15 @@ window.addEventListener("scroll", () => {
   let speed = rate * 0.3 + "px";
 
   creatorImgBox.style.transform = `translateY(-${speed})`;
+});
+
+// ---- LOGO SECTION ---- //
+
+const creatorSectTop = creatorSect.getBoundingClientRect().top;
+// console.log(creatorSectTop);
+
+window.addEventListener("scroll", () => {
+  logoImg.classList.toggle("logoChange", window.scrollY > creatorSectTop);
 });
 
 // ---- GALLERY SECTION ---- //

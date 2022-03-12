@@ -63,6 +63,11 @@ body {
   left: 0;
   filter: drop-shadow(0.1rem 0.1rem 0.4rem #050505a1);
   -webkit-filter: drop-shadow(0.1rem 0.1rem 0.4rem #050505a1);
+  transition: 0.3s ease;
+  -webkit-transition: 0.3s ease;
+  -moz-transition: 0.3s ease;
+  -ms-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
 }
 
 @media only screen and (min-width: 768px) {
@@ -199,6 +204,10 @@ body {
   .header .nav-main .nav-ul .nav-li .nav-links:visited {
     font-size: 6rem;
   }
+}
+
+.logoChange {
+  opacity: 0;
 }
 
 .showNav {
@@ -837,35 +846,35 @@ body {
 }
 
 .section-gallery .gallery-container .gallery-img-box:nth-of-type(1) {
-  animation-delay: 400ms;
+  animation-delay: 100ms;
 }
 
 .section-gallery .gallery-container .gallery-img-box:nth-of-type(2) {
-  animation-delay: 500ms;
+  animation-delay: 200ms;
 }
 
 .section-gallery .gallery-container .gallery-img-box:nth-of-type(3) {
-  animation-delay: 600ms;
+  animation-delay: 300ms;
 }
 
 .section-gallery .gallery-container .gallery-img-box:nth-of-type(4) {
-  animation-delay: 700ms;
+  animation-delay: 400ms;
 }
 
 .section-gallery .gallery-container .gallery-img-box:nth-of-type(5) {
-  animation-delay: 800ms;
+  animation-delay: 500ms;
 }
 
 .section-gallery .gallery-container .gallery-img-box:nth-of-type(6) {
-  animation-delay: 900ms;
+  animation-delay: 600ms;
 }
 
 .section-gallery .gallery-container .gallery-img-box:nth-of-type(7) {
-  animation-delay: 1000ms;
+  animation-delay: 700ms;
 }
 
 .section-gallery .gallery-container .gallery-img-box:nth-of-type(8) {
-  animation-delay: 1000ms;
+  animation-delay: 800ms;
 }
 
 .section-gallery .modal-container {
@@ -1353,10 +1362,10 @@ body {
   height: auto;
   display: none;
   font-family: "VCR", sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   color: red;
   position: absolute;
-  top: -80%;
+  top: -70%;
   left: 50%;
   transform: translateX(-50%);
   -webkit-transform: translateX(-50%);
@@ -1507,23 +1516,28 @@ footer {
   align-items: center;
 }
 
+@media only screen and (min-width: 768px) {
+  .burger {
+    right: 3%;
+  }
+}
+
 .burger .cheese {
   width: 80%;
   height: 70%;
   position: relative;
   cursor: pointer;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-  justify-content: space-evenly;
+  align-items: flex-end;
   filter: drop-shadow(0.1rem 0.1rem 0.1rem #050505a1);
   -webkit-filter: drop-shadow(0.1rem 0.1rem 0.1rem #050505a1);
 }
 
 .burger .cheese .top {
   width: 100%;
-  height: 0.5rem;
+  height: 0.3rem;
+  margin-bottom: 0.6rem;
   background-color: red;
   transition: 0.3s ease;
   -webkit-transition: 0.3s ease;
@@ -1533,8 +1547,9 @@ footer {
 }
 
 .burger .cheese .meat {
-  width: 100%;
-  height: 0.5rem;
+  width: 75%;
+  height: 0.3rem;
+  margin-bottom: 0.6rem;
   background-color: red;
   transition: 0.3s ease;
   -webkit-transition: 0.3s ease;
@@ -1545,7 +1560,7 @@ footer {
 
 .burger .cheese .bottom {
   width: 100%;
-  height: 0.5rem;
+  height: 0.3rem;
   background-color: red;
   transition: 0.3s ease;
   -webkit-transition: 0.3s ease;
