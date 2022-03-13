@@ -18,7 +18,17 @@ cheese.addEventListener("click", () => {
   topBun.classList.toggle("topChange");
   meat.classList.toggle("meatGone");
   bottomBun.classList.toggle("bottomChange");
+
+  if (navMenu.classList.contains("showNav")) {
+    topBun.style.width = "85%";
+    bottomBun.style.width = "85%";
+  } else {
+    topBun.style.width = "100%";
+    bottomBun.style.width = "100%";
+  }
 });
+
+// Close Nav Links After Click
 
 navLinks.forEach((l) => {
   l.addEventListener("click", () => {
@@ -26,6 +36,8 @@ navLinks.forEach((l) => {
     topBun.classList.remove("topChange");
     meat.classList.remove("meatGone");
     bottomBun.classList.remove("bottomChange");
+    topBun.style.width = "100%";
+    bottomBun.style.width = "100%";
   });
 });
 
@@ -39,7 +51,7 @@ const creatorImgBox = document.querySelector(".bg-img-box");
 
 window.addEventListener("scroll", () => {
   let rate = window.pageYOffset;
-  let speed = rate * 0.3 + "px";
+  let speed = rate * 0.2 + "px";
 
   creatorImgBox.style.transform = `translateY(-${speed})`;
 });
@@ -55,6 +67,7 @@ window.addEventListener("scroll", () => {
 
 // ---- GALLERY SECTION ---- //
 
+const galleryContainer = document.querySelector(".gallery-container");
 const gallerySect = document.querySelector(".section-gallery");
 const galleryImgBox = document.querySelectorAll(".gallery-img-box");
 const galleryImage = document.querySelectorAll(".gallery-img");
@@ -63,28 +76,42 @@ const modalImgBox = document.querySelector(".modal-img-box");
 const modalImg = document.querySelector(".modal-img");
 const closeModal = document.querySelector(".far");
 
+// Media Queries
+
+const mediaQueryLandscape = window.matchMedia("(min-width: 1024px)");
+const mediaQueryPortrait = window.matchMedia("min-width: 300px");
+
 // Animation Effect
 
 const observerFunc = function (entries) {
   const [entry] = entries;
   console.log(entry);
 
-  entry.target.classList.toggle("galleryAnimateIn", entry.isIntersecting);
+  if (entry.isIntersecting) {
+    galleryImgBox.forEach((gb) => {
+      gb.classList.toggle("galleryAnimateIn");
+    });
+  }
+
+  // Animation Direction change in Landscape Mode
+  if (entry.isIntersecting && mediaQueryLandscape.matches === true) {
+    galleryImgBox.forEach((gb) => {
+      gb.classList.toggle("galleryAnimateUp");
+    });
+  }
 
   if (entry.isIntersecting) galleryObs.unobserve(entry.target);
 };
 
 const observerOptions = {
   root: null,
-  threshold: 0.1,
+  threshold: 0,
   // rootMargin: "-50px",
 };
 
 const galleryObs = new IntersectionObserver(observerFunc, observerOptions);
 
-galleryImgBox.forEach((g) => {
-  galleryObs.observe(g);
-});
+galleryObs.observe(galleryContainer);
 
 // Images / Open Modal
 

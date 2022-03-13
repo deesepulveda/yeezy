@@ -19,7 +19,7 @@
 
     @include tabletPortrait {
       & {
-        width: 75%;
+        width: 65%;
         filter: drop-shadow(0.2rem 0.2rem 0.5rem #050505a1);
         -webkit-filter: drop-shadow(0.2rem 0.2rem 0.5rem #050505a1);
       }
@@ -40,7 +40,7 @@
   // Social Media Icons //
 
   .icon-wrapper {
-    width: 60%;
+    width: 40%;
     height: auto;
     margin-top: 2rem;
     @include flex-center;
@@ -48,45 +48,27 @@
 
     @include phoneLandscape {
       & {
-        width: 30%;
+        width: 20%;
       }
     }
 
     @include tabletPortrait {
       & {
-        width: 40%;
+        width: 15%;
       }
     }
 
     @include desktop {
       & {
-        width: 30%;
-      }
-    }
-
-    @include largeDesktop {
-      & {
-        width: 25%;
-      }
-    }
-
-    @include XlargeDesktop {
-      & {
-        width: 15%;
+        width: 20%;
       }
     }
 
     i {
       color: $color-dark;
-      font-size: 3rem;
+      font-size: 2.5rem;
       @include text-shadowgray-lite;
       @include transit3;
-
-      @include tabletPortrait {
-        & {
-          font-size: 4rem;
-        }
-      }
 
       @include largeDesktop {
         & {

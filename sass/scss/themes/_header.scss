@@ -35,6 +35,12 @@
       }
     }
 
+    @include desktop {
+      & {
+        width: 10%;
+      }
+    }
+
     .logo-img {
       @include keep-it-hundo;
       object-fit: contain;
@@ -44,25 +50,19 @@
   // Nav //
 
   .nav-main {
-    width: 70vw;
+    width: 100vw;
     height: 100vh;
     position: absolute;
     top: 0;
     left: -100vw;
-    @include transit6;
-
-    @include desktop {
-      & {
-        width: 50vw;
-      }
-    }
+    @include transit4;
 
     &::after {
       content: "";
       @include keep-it-hundo;
       @include absol-topLeftZero;
       background-color: $color-dark;
-      opacity: 0.95;
+      opacity: 0.97;
       z-index: -1;
     }
 

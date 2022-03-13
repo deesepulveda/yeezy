@@ -16,7 +16,7 @@
 
   @include tabletLandscape {
     & {
-      height: 300rem;
+      height: 100rem;
     }
   }
 
@@ -42,6 +42,26 @@
     @include tabletPortrait {
       & {
         height: 90%;
+      }
+    }
+
+    @include tabletLandscape {
+      & {
+        height: 70%;
+        padding: 2rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        grid-gap: 1rem;
+      }
+    }
+
+    @include tabletLandscapeLarge {
+      & {
+        height: 70%;
+        padding: 2rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        grid-gap: 1rem;
       }
     }
 
@@ -84,7 +104,7 @@
         }
       }
 
-      @include desktop {
+      @include tabletLandscape {
         & {
           height: 100%;
           padding: 0;
@@ -92,35 +112,35 @@
       }
 
       &:nth-of-type(1) {
-        animation-delay: 100ms;
-      }
-
-      &:nth-of-type(2) {
-        animation-delay: 200ms;
-      }
-
-      &:nth-of-type(3) {
         animation-delay: 300ms;
       }
 
-      &:nth-of-type(4) {
-        animation-delay: 400ms;
-      }
-
-      &:nth-of-type(5) {
+      &:nth-of-type(2) {
         animation-delay: 500ms;
       }
 
-      &:nth-of-type(6) {
-        animation-delay: 600ms;
-      }
-
-      &:nth-of-type(7) {
+      &:nth-of-type(3) {
         animation-delay: 700ms;
       }
 
+      &:nth-of-type(4) {
+        animation-delay: 900ms;
+      }
+
+      &:nth-of-type(5) {
+        animation-delay: 1100ms;
+      }
+
+      &:nth-of-type(6) {
+        animation-delay: 1300ms;
+      }
+
+      &:nth-of-type(7) {
+        animation-delay: 1500ms;
+      }
+
       &:nth-of-type(8) {
-        animation-delay: 800ms;
+        animation-delay: 1700ms;
       }
     }
   }
@@ -188,10 +208,21 @@
   }
 }
 
+// Animate Direction in Mobile/Portrait Versions
+
 .galleryAnimateIn {
   animation: galleryAnimation 0.8s linear both;
   -webkit-animation: galleryAnimation 0.8s linear both;
 }
+
+// Animate Direction in Desktop/Landscape Versions
+
+.galleryAnimateUp {
+  animation: galleryAnimationLandscape 0.8s linear both;
+  -webkit-animation: galleryAnimationLandscape 0.8s linear both;
+}
+
+// Keyframes for Animations
 
 @keyframes galleryAnimation {
   0% {
@@ -219,5 +250,36 @@
     -moz-transform: translateX(0);
     -ms-transform: translateX(0);
     -o-transform: translateX(0);
+  }
+}
+
+// **** //
+
+@keyframes galleryAnimationLandscape {
+  0% {
+    opacity: 0;
+    transform: translateY(120%);
+    -webkit-transform: translateY(120%);
+    -moz-transform: translateY(120%);
+    -ms-transform: translateY(120%);
+    -o-transform: translateY(120%);
+  }
+
+  80% {
+    opacity: 1;
+    transform: translateY(-5%);
+    -webkit-transform: translateY(-5%);
+    -moz-transform: translateY(-5%);
+    -ms-transform: translateY(-5%);
+    -o-transform: translateY(-5%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
   }
 }
