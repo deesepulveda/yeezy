@@ -80,19 +80,19 @@
 
       @include tabletPortrait {
         & {
-          height: 60%;
+          height: 65%;
         }
       }
 
       @include tabletLandscape {
         & {
-          height: 70%;
+          height: 75%;
         }
       }
 
       @include tabletPortraitLarge {
         & {
-          height: 60%;
+          height: 70%;
         }
       }
 

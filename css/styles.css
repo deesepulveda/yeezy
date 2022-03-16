@@ -137,19 +137,19 @@ body {
 
 @media only screen and (min-width: 768px) {
   .header .nav-main .nav-ul {
-    height: 60%;
+    height: 65%;
   }
 }
 
 @media only screen and (min-width: 1024px) {
   .header .nav-main .nav-ul {
-    height: 70%;
+    height: 75%;
   }
 }
 
 @media only screen and (min-width: 834px) {
   .header .nav-main .nav-ul {
-    height: 60%;
+    height: 70%;
   }
 }
 
@@ -1022,7 +1022,6 @@ body {
 
 .section-kicks {
   height: auto;
-  margin-bottom: 2rem;
 }
 
 @media only screen and (min-width: 1224px) {
@@ -1040,10 +1039,29 @@ body {
 .section-kicks .kicks-container .kick-box {
   width: 100%;
   max-width: 150rem;
-  margin: 0 auto 10rem;
   height: 60rem;
   position: relative;
   overflow: hidden;
+}
+
+.section-kicks .kicks-container .kick-box:not(:last-child) {
+  margin: 0 auto 10rem;
+}
+
+.section-kicks .kicks-container .kick-box:last-child {
+  margin: 0 auto 2rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .section-kicks .kicks-container .kick-box:last-child {
+    margin: 0 auto 5rem;
+  }
+}
+
+@media only screen and (min-width: 834px) {
+  .section-kicks .kicks-container .kick-box:last-child {
+    margin: 0 auto 10rem;
+  }
 }
 
 @media only screen and (min-width: 768px) {
@@ -1245,6 +1263,12 @@ body {
   }
 }
 
+@media only screen and (min-width: 1112px) {
+  .section-kicks .kicks-container .kick-box .kicks-content-box .inner-content-box {
+    padding-top: 2rem;
+  }
+}
+
 @media only screen and (min-width: 1224px) {
   .section-kicks .kicks-container .kick-box .kicks-content-box .inner-content-box {
     width: 40%;
@@ -1419,7 +1443,8 @@ body {
 }
 
 .section-contact {
-  height: 50rem;
+  height: 70rem;
+  padding-top: 10rem;
 }
 
 .section-contact .form-wrapper {
@@ -1525,6 +1550,66 @@ body {
 .section-contact .form-wrapper .btn-box .submit:hover {
   color: #fff;
   background-color: #050505;
+}
+
+.section-upcoming {
+  height: 100rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+@media only screen and (min-width: 768px) {
+  .section-upcoming {
+    height: 170rem;
+  }
+}
+
+@media only screen and (min-width: 1224px) {
+  .section-upcoming {
+    height: 80rem;
+  }
+}
+
+.section-upcoming .new-shoes-container {
+  width: 100%;
+  height: calc(90% - 10rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+@media only screen and (min-width: 1224px) {
+  .section-upcoming .new-shoes-container {
+    flex-direction: row;
+    max-width: 200rem;
+  }
+}
+
+.section-upcoming .new-shoes-container .new-shoes {
+  width: 90%;
+}
+
+@media only screen and (min-width: 768px) {
+  .section-upcoming .new-shoes-container .new-shoes {
+    width: 70%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .section-upcoming .new-shoes-container .new-shoes {
+    width: 60%;
+  }
+}
+
+.section-upcoming .new-shoes-container .new-shoes .new-shoes-img {
+  width: 80%;
+  height: auto;
+  object-fit: contain;
+  cursor: pointer;
 }
 
 footer {

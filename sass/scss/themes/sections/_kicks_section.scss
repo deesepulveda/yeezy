@@ -1,6 +1,6 @@
 .section-kicks {
   height: auto;
-  margin-bottom: 2rem;
+  // margin-bottom: 2rem;
 
   @include desktop {
     & {
@@ -18,10 +18,29 @@
     .kick-box {
       width: 100%;
       max-width: 150rem;
-      margin: 0 auto 10rem;
       height: 60rem;
       position: relative;
       overflow: hidden;
+
+      &:not(:last-child) {
+        margin: 0 auto 10rem;
+      }
+
+      &:last-child {
+        margin: 0 auto 2rem;
+
+        @include tabletPortrait {
+          & {
+            margin: 0 auto 5rem;
+          }
+        }
+
+        @include tabletPortraitLarge {
+          & {
+            margin: 0 auto 10rem;
+          }
+        }
+      }
 
       @include tabletPortrait {
         & {
@@ -207,6 +226,12 @@
           @include tabletLandscape {
             & {
               bottom: 0;
+            }
+          }
+
+          @include tabletLandscapeLarge {
+            & {
+              padding-top: 2rem;
             }
           }
 
