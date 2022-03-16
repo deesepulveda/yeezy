@@ -407,7 +407,7 @@ body {
 
 .section-lineup {
   height: auto;
-  margin-top: 5rem;
+  margin: 5rem auto;
 }
 
 .section-lineup .shoe-container {
@@ -726,6 +726,7 @@ body {
 
 .section-gallery {
   height: 150rem;
+  margin: 5rem auto;
   overflow: hidden;
 }
 
@@ -737,13 +738,14 @@ body {
 
 @media only screen and (min-width: 768px) {
   .section-gallery {
-    height: 270rem;
+    height: 250rem;
   }
 }
 
 @media only screen and (min-width: 1024px) {
   .section-gallery {
     height: 100rem;
+    margin: 5rem auto 0;
   }
 }
 

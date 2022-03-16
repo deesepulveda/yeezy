@@ -1,6 +1,7 @@
 .section-lineup {
   height: auto;
-  margin-top: 5rem;
+  // margin-top: 5rem;
+  margin: 5rem auto;
 
   .shoe-container {
     @include keep-it-hundo;

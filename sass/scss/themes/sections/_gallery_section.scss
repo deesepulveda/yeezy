@@ -1,5 +1,6 @@
 .section-gallery {
   height: 150rem;
+  margin: 5rem auto;
   overflow: hidden;
 
   @include phoneLandscape {
@@ -10,13 +11,14 @@
 
   @include tabletPortrait {
     & {
-      height: 270rem;
+      height: 250rem;
     }
   }
 
   @include tabletLandscape {
     & {
       height: 100rem;
+      margin: 5rem auto 0;
     }
   }
 
