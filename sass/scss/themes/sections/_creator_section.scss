@@ -1,5 +1,5 @@
 .section-creator {
-  height: 70rem;
+  height: 80rem;
   position: relative;
   overflow: hidden;
   // background-image: url(../public/images/KanyeAdidasAd.png);
@@ -36,19 +36,18 @@
   }
 
   .bg-img-box {
-    @include keep-it-hundo;
+    // @include keep-it-hundo;
+    width: auto;
+    height: 150%;
     @include absol-topLeftZero;
     position: relative;
 
     .bg-img {
       @include keep-it-hundo;
-      // height: 150%;
+      // width: auto;
+      // height: 140%;
       object-fit: cover;
       object-position: bottom;
-      // position: absolute;
-      // top: 20%;
-      // left: 50%;
-      // @include transformX;
     }
   }
 
@@ -60,5 +59,85 @@
     top: 0;
     left: 0;
     opacity: 0.7;
+  }
+
+  .creator-img-container {
+    width: 80%;
+    height: 90%;
+    position: relative;
+    @include absol-center;
+    // border: 1px solid red;
+    // @include flex-center-col;
+    // justify-content: space-evenly;
+
+    .creator-img-one,
+    .creator-img-two,
+    .creator-img-three {
+      width: 20rem;
+      height: 20rem;
+      position: absolute;
+      bottom: 0;
+      @include deep-shadow-gray;
+
+      img {
+        @include keep-it-hundo;
+        object-fit: cover;
+      }
+    }
+
+    .creator-img-one {
+      left: 1%;
+    }
+
+    .creator-img-two {
+      right: 1%;
+    }
+
+    .creator-img-three {
+      left: 15%;
+    }
+
+    .creator-text-one,
+    .creator-text-two,
+    .creator-text-three,
+    .creator-text-four {
+      // width: 25rem;
+      // height: auto;
+      position: absolute;
+      color: $color-lite;
+      letter-spacing: 0.5rem;
+    }
+
+    .creator-text-one,
+    .creator-text-two,
+    .creator-text-four {
+      -webkit-text-stroke: 0.15rem $color-lite;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .creator-text-one {
+      font-size: 4rem;
+      top: 13%;
+      left: -50%;
+    }
+
+    .creator-text-two {
+      font-size: 8rem;
+      top: 25%;
+      right: -50%;
+    }
+
+    .creator-text-three {
+      font-size: 10rem;
+      top: 50%;
+      left: -100%;
+      @include text-shadowgray;
+    }
+
+    .creator-text-four {
+      font-size: 8rem;
+      bottom: 0;
+      right: -100%;
+    }
   }
 }
