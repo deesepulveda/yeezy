@@ -49,6 +49,7 @@ const creatorImgBox = document.querySelector(".bg-img-box");
 const creatorImgOne = document.querySelector(".creator-img-one");
 const creatorImgTwo = document.querySelector(".creator-img-two");
 const creatorImgThree = document.querySelector(".creator-img-three");
+const creatorImgFour = document.querySelector(".creator-img-four");
 const creatorTextOne = document.querySelector(".creator-text-one");
 const creatorTextTwo = document.querySelector(".creator-text-two");
 const creatorTextThree = document.querySelector(".creator-text-three");
@@ -59,20 +60,21 @@ const creatorTextFour = document.querySelector(".creator-text-four");
 window.addEventListener("scroll", () => {
   let rate = window.pageYOffset;
   let speed = rate * 0.2 + "px";
-  let speedFast = rate * 0.35 + "px";
-  let speedFaster = rate * 0.25 + "px";
-  let speedFastest = rate * 0.5 + "px";
+  let speedFast = rate * 0.3 + "px";
+  let speedFaster = rate * 0.5 + "px";
+  let speedFastest = rate * 0.75 + "px";
 
   creatorImgBox.style.transform = `translateY(-${speed})`;
   // creatorImgOne.style.transform = `translateX(${speed})`;
   // creatorImgTwo.style.transform = `translateX(-${speed})`;
-  creatorImgOne.style.transform = `translateY(-${speed})`;
+  creatorImgOne.style.transform = `translateY(-${speedFast})`;
   creatorImgTwo.style.transform = `translateY(-${speedFastest})`;
   creatorImgThree.style.transform = `translateY(-${speedFaster})`;
+  creatorImgFour.style.transform = `translateY(-${speed})`;
   creatorTextOne.style.transform = `translateX(${speed})`;
-  creatorTextTwo.style.transform = `translateX(-${speed})`;
+  creatorTextTwo.style.transform = `translateX(-${speedFast})`;
   creatorTextThree.style.transform = `translateX(${speed})`;
-  creatorTextFour.style.transform = `translateX(-${speed})`;
+  creatorTextFour.style.transform = `translateX(-${speedFastest})`;
 });
 
 // ---- LOGO SECTION ---- //

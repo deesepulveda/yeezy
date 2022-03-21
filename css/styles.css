@@ -407,7 +407,7 @@ body {
 }
 
 .section-creator .creator-img-container {
-  width: 80%;
+  width: 90%;
   height: 90%;
   position: relative;
   position: absolute;
@@ -422,32 +422,39 @@ body {
 
 .section-creator .creator-img-container .creator-img-one,
 .section-creator .creator-img-container .creator-img-two,
-.section-creator .creator-img-container .creator-img-three {
+.section-creator .creator-img-container .creator-img-three,
+.section-creator .creator-img-container .creator-img-four {
   width: 20rem;
   height: 20rem;
   position: absolute;
-  bottom: 0;
-  box-shadow: 0.3rem 0.3rem 2rem #7c7979;
+  bottom: -25%;
+  box-shadow: 0 0.7rem 5rem #050505;
 }
 
 .section-creator .creator-img-container .creator-img-one img,
 .section-creator .creator-img-container .creator-img-two img,
-.section-creator .creator-img-container .creator-img-three img {
+.section-creator .creator-img-container .creator-img-three img,
+.section-creator .creator-img-container .creator-img-four img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
 .section-creator .creator-img-container .creator-img-one {
-  left: 1%;
+  left: 0;
 }
 
 .section-creator .creator-img-container .creator-img-two {
-  right: 1%;
+  bottom: -40%;
+  left: 15%;
 }
 
 .section-creator .creator-img-container .creator-img-three {
-  left: 15%;
+  left: 30%;
+}
+
+.section-creator .creator-img-container .creator-img-four {
+  left: 45%;
 }
 
 .section-creator .creator-img-container .creator-text-one,
@@ -459,7 +466,6 @@ body {
   letter-spacing: 0.5rem;
 }
 
-.section-creator .creator-img-container .creator-text-one,
 .section-creator .creator-img-container .creator-text-two,
 .section-creator .creator-img-container .creator-text-four {
   -webkit-text-stroke: 0.15rem #fff;
@@ -467,28 +473,28 @@ body {
 }
 
 .section-creator .creator-img-container .creator-text-one {
-  font-size: 4rem;
+  font-size: 6rem;
   top: 13%;
   left: -50%;
 }
 
 .section-creator .creator-img-container .creator-text-two {
   font-size: 8rem;
-  top: 25%;
+  top: 30%;
   right: -50%;
 }
 
 .section-creator .creator-img-container .creator-text-three {
-  font-size: 10rem;
-  top: 50%;
-  left: -100%;
+  font-size: 14rem;
+  top: 55%;
+  left: -120%;
   text-shadow: 0.2rem 0.2rem 0.3rem #7c7979;
 }
 
 .section-creator .creator-img-container .creator-text-four {
-  font-size: 8rem;
+  font-size: 10rem;
   bottom: 0;
-  right: -100%;
+  right: -250%;
 }
 
 .section-lineup {

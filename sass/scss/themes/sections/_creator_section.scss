@@ -62,22 +62,21 @@
   }
 
   .creator-img-container {
-    width: 80%;
+    width: 90%;
     height: 90%;
     position: relative;
     @include absol-center;
     // border: 1px solid red;
-    // @include flex-center-col;
-    // justify-content: space-evenly;
 
     .creator-img-one,
     .creator-img-two,
-    .creator-img-three {
+    .creator-img-three,
+    .creator-img-four {
       width: 20rem;
       height: 20rem;
       position: absolute;
-      bottom: 0;
-      @include deep-shadow-gray;
+      bottom: -25%;
+      @include deep-shadow;
 
       img {
         @include keep-it-hundo;
@@ -86,15 +85,20 @@
     }
 
     .creator-img-one {
-      left: 1%;
+      left: 0;
     }
 
     .creator-img-two {
-      right: 1%;
+      bottom: -40%;
+      left: 15%;
     }
 
     .creator-img-three {
-      left: 15%;
+      left: 30%;
+    }
+
+    .creator-img-four {
+      left: 45%;
     }
 
     .creator-text-one,
@@ -108,7 +112,6 @@
       letter-spacing: 0.5rem;
     }
 
-    .creator-text-one,
     .creator-text-two,
     .creator-text-four {
       -webkit-text-stroke: 0.15rem $color-lite;
@@ -116,28 +119,28 @@
     }
 
     .creator-text-one {
-      font-size: 4rem;
+      font-size: 6rem;
       top: 13%;
       left: -50%;
     }
 
     .creator-text-two {
       font-size: 8rem;
-      top: 25%;
+      top: 30%;
       right: -50%;
     }
 
     .creator-text-three {
-      font-size: 10rem;
-      top: 50%;
-      left: -100%;
+      font-size: 14rem;
+      top: 55%;
+      left: -120%;
       @include text-shadowgray;
     }
 
     .creator-text-four {
-      font-size: 8rem;
+      font-size: 10rem;
       bottom: 0;
-      right: -100%;
+      right: -250%;
     }
   }
 }
