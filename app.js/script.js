@@ -65,6 +65,41 @@ window.addEventListener("scroll", () => {
   logoImg.classList.toggle("logoChange", window.scrollY > creatorSectTop);
 });
 
+// ---- LINEUP SECTION ---- //
+
+const shoeContainer = document.querySelector(".shoe-container");
+const shoes = document.querySelectorAll(".shoes");
+
+// Observer Callback Function
+
+const observerLineupFunc = function (entries) {
+  const [entry] = entries;
+  console.log(entry);
+
+  if (entry.isIntersecting) {
+    shoes.forEach((s) => {
+      s.classList.toggle("galleryAnimateRight");
+    });
+  }
+
+  if (entry.isIntersecting) lineupObs.unobserve(entry.target);
+};
+
+// Observer Options
+
+const observerLineupOptions = {
+  root: null,
+  threshold: 0,
+  rootMargin: "-100px",
+};
+
+const lineupObs = new IntersectionObserver(
+  observerLineupFunc,
+  observerLineupOptions
+);
+
+lineupObs.observe(shoeContainer);
+
 // ---- GALLERY SECTION ---- //
 
 const galleryContainer = document.querySelector(".gallery-container");
@@ -81,9 +116,9 @@ const closeModal = document.querySelector(".far");
 const mediaQueryLandscape = window.matchMedia("(min-width: 1024px)");
 const mediaQueryPortrait = window.matchMedia("min-width: 300px");
 
-// Animation Effect
+// Observer Callback Function
 
-const observerFunc = function (entries) {
+const observerGalleryFunc = function (entries) {
   const [entry] = entries;
   console.log(entry);
 
@@ -94,6 +129,7 @@ const observerFunc = function (entries) {
   }
 
   // Animation Direction change in Landscape Mode
+
   if (entry.isIntersecting && mediaQueryLandscape.matches === true) {
     galleryImgBox.forEach((gb) => {
       gb.classList.toggle("galleryAnimateUp");
@@ -103,13 +139,18 @@ const observerFunc = function (entries) {
   if (entry.isIntersecting) galleryObs.unobserve(entry.target);
 };
 
-const observerOptions = {
+// Observer Options
+
+const observerGalleryOptions = {
   root: null,
   threshold: 0,
   // rootMargin: "-50px",
 };
 
-const galleryObs = new IntersectionObserver(observerFunc, observerOptions);
+const galleryObs = new IntersectionObserver(
+  observerGalleryFunc,
+  observerGalleryOptions
+);
 
 galleryObs.observe(galleryContainer);
 

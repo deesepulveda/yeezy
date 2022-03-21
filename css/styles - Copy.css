@@ -419,6 +419,7 @@ body {
 
 @media only screen and (min-width: 1224px) {
   .section-lineup .shoe-container {
+    height: 60rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -438,6 +439,22 @@ body {
   margin: 2rem auto 4rem;
   position: relative;
   overflow: hidden;
+}
+
+.section-lineup .shoe-container .shoes:nth-of-type(1) {
+  animation-delay: 500ms;
+}
+
+.section-lineup .shoe-container .shoes:nth-of-type(2) {
+  animation-delay: 700ms;
+}
+
+.section-lineup .shoe-container .shoes:nth-of-type(3) {
+  animation-delay: 900ms;
+}
+
+.section-lineup .shoe-container .shoes:nth-of-type(4) {
+  animation-delay: 1100ms;
 }
 
 @media only screen and (min-width: 620px) {
@@ -722,6 +739,38 @@ body {
 @media only screen and (min-width: 1824px) {
   .section-lineup .shoe-container .shoes .shoe-name {
     font-size: 6rem;
+  }
+}
+
+.galleryAnimateRight {
+  animation: galleryAnimationRight 1s linear 0.3s both;
+  -webkit-animation: galleryAnimationRight 1s linear 0.3s both;
+}
+
+@keyframes galleryAnimationRight {
+  0% {
+    opacity: 0;
+    transform: translateX(150%);
+    -webkit-transform: translateX(150%);
+    -moz-transform: translateX(150%);
+    -ms-transform: translateX(150%);
+    -o-transform: translateX(150%);
+  }
+  80% {
+    opacity: 1;
+    transform: translateX(-5%);
+    -webkit-transform: translateX(-5%);
+    -moz-transform: translateX(-5%);
+    -ms-transform: translateX(-5%);
+    -o-transform: translateX(-5%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
   }
 }
 
@@ -1618,14 +1667,138 @@ body {
 
 footer {
   width: 100%;
-  height: 50rem;
+  height: 55rem;
   background-color: #050505;
   color: #fff;
   font-size: 1.25rem;
-  letter-spacing: 0.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@media only screen and (min-width: 1024px) {
+  footer {
+    height: 40rem;
+  }
+}
+
+footer .sitemap-container {
+  width: 100%;
+  max-width: 150rem;
+  height: 70%;
+  margin: 4rem auto 0;
+  display: flex;
+  flex-direction: column;
+}
+
+@media only screen and (min-width: 1024px) {
+  footer .sitemap-container {
+    width: 80%;
+    height: 65%;
+    flex-direction: row;
+  }
+}
+
+footer .sitemap-container .sitemaps {
+  width: 80%;
+  height: calc(100% / 2);
+  margin: 0 auto;
+  padding-top: 2rem;
+}
+
+@media only screen and (min-width: 1024px) {
+  footer .sitemap-container .sitemaps {
+    height: 100%;
+  }
+}
+
+footer .sitemap-container .sitemaps .site-title {
+  width: 100%;
+  height: auto;
+  font-size: 2.25rem;
+  letter-spacing: 0.4rem;
+  position: relative;
+}
+
+footer .sitemap-container .sitemaps .site-title::after {
+  content: "";
+  width: 70%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  border-bottom: 0.1rem solid #fff;
+}
+
+footer .sitemap-container .sitemaps .site-nav {
+  width: 70%;
+  margin: 0 auto;
+  padding-top: 2rem;
+  font-size: 1.75rem;
+  text-align: start;
+}
+
+footer .sitemap-container .sitemaps .site-nav .site-ul {
+  width: 100%;
+  height: 100%;
+}
+
+footer .sitemap-container .sitemaps .site-nav .site-ul li {
+  list-style-type: none;
+}
+
+footer .sitemap-container .sitemaps .site-nav .site-ul li a {
+  text-decoration: none;
+  color: #fff;
+  letter-spacing: 0.2rem;
+  transition: 0.3s ease;
+  -webkit-transition: 0.3s ease;
+  -moz-transition: 0.3s ease;
+  -ms-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
+}
+
+footer .sitemap-container .sitemaps .site-nav .site-ul li a:hover {
+  color: red;
+  letter-spacing: 0.3rem;
+}
+
+footer .footer-copyright {
+  width: 100%;
+  height: 15%;
+  position: relative;
+  letter-spacing: 0.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer .footer-copyright::after {
+  content: "";
+  width: 80%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  border-top: 0.1rem solid #fff;
+}
+
+@media only screen and (min-width: 1024px) {
+  footer .footer-copyright {
+    height: 20%;
+  }
 }
 
 .burger {

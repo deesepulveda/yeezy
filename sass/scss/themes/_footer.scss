@@ -1,9 +1,114 @@
 footer {
   width: 100%;
-  height: 50rem;
+  height: 55rem;
   background-color: $color-dark;
   color: $color-lite;
   font-size: 1.25rem;
-  letter-spacing: 0.5rem;
-  @include flex-center;
+  @include flex-center-col;
+  justify-content: space-between;
+
+  @include tabletLandscape {
+    & {
+      height: 40rem;
+    }
+  }
+
+  .sitemap-container {
+    width: 100%;
+    max-width: 150rem;
+    height: 70%;
+    margin: 4rem auto 0;
+    display: flex;
+    flex-direction: column;
+    // border: 1px solid red;
+
+    @include tabletLandscape {
+      & {
+        width: 80%;
+        height: 65%;
+        flex-direction: row;
+      }
+    }
+
+    .sitemaps {
+      width: 80%;
+      height: calc(100% / 2);
+      margin: 0 auto;
+      padding-top: 2rem;
+      // border: 1px solid green;
+
+      @include tabletLandscape {
+        & {
+          height: 100%;
+        }
+      }
+
+      .site-title {
+        width: 100%;
+        height: auto;
+        font-size: 2.25rem;
+        letter-spacing: 0.4rem;
+        position: relative;
+
+        &::after {
+          content: "";
+          width: 70%;
+          height: 100%;
+          @include absol-center;
+          border-bottom: 0.1rem solid $color-lite;
+        }
+      }
+
+      .site-nav {
+        width: 70%;
+        margin: 0 auto;
+        padding-top: 2rem;
+        font-size: 1.75rem;
+        text-align: start;
+
+        .site-ul {
+          @include keep-it-hundo;
+
+          li {
+            list-style-type: none;
+
+            a {
+              text-decoration: none;
+              color: $color-lite;
+              letter-spacing: 0.2rem;
+              @include transit3;
+
+              &:hover {
+                color: red;
+                letter-spacing: 0.3rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .footer-copyright {
+    width: 100%;
+    height: 15%;
+    position: relative;
+    letter-spacing: 0.2rem;
+    @include flex-center;
+    // border: 1px solid red;
+
+    &::after {
+      content: "";
+      width: 80%;
+      height: 100%;
+      @include absol-center;
+      border-top: 0.1rem solid $color-lite;
+    }
+
+    @include tabletLandscape {
+      & {
+        height: 20%;
+      }
+    }
+  }
 }

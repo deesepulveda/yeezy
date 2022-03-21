@@ -10,6 +10,7 @@
 
     @include desktop {
       & {
+        height: 60rem;
         @include flex-center;
         margin: 0 auto 6rem;
       }
@@ -27,6 +28,22 @@
       margin: 2rem auto 4rem;
       position: relative;
       overflow: hidden;
+
+      &:nth-of-type(1) {
+        animation-delay: 500ms;
+      }
+
+      &:nth-of-type(2) {
+        animation-delay: 700ms;
+      }
+
+      &:nth-of-type(3) {
+        animation-delay: 900ms;
+      }
+
+      &:nth-of-type(4) {
+        animation-delay: 1100ms;
+      }
 
       @include phoneLandscape {
         & {
@@ -282,5 +299,43 @@
         }
       }
     }
+  }
+}
+
+// Animate Direction in from Right
+
+.galleryAnimateRight {
+  animation: galleryAnimationRight 1s linear 0.3s both;
+  -webkit-animation: galleryAnimationRight 1s linear 0.3s both;
+}
+
+// **** //
+
+@keyframes galleryAnimationRight {
+  0% {
+    opacity: 0;
+    transform: translateX(150%);
+    -webkit-transform: translateX(150%);
+    -moz-transform: translateX(150%);
+    -ms-transform: translateX(150%);
+    -o-transform: translateX(150%);
+  }
+
+  80% {
+    opacity: 1;
+    transform: translateX(-5%);
+    -webkit-transform: translateX(-5%);
+    -moz-transform: translateX(-5%);
+    -ms-transform: translateX(-5%);
+    -o-transform: translateX(-5%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
   }
 }
