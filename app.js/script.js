@@ -65,8 +65,6 @@ window.addEventListener("scroll", () => {
   let speedFastest = rate * 0.75 + "px";
 
   creatorImgBox.style.transform = `translateY(-${speed})`;
-  // creatorImgOne.style.transform = `translateX(${speed})`;
-  // creatorImgTwo.style.transform = `translateX(-${speed})`;
   creatorImgOne.style.transform = `translateY(-${speedFast})`;
   creatorImgTwo.style.transform = `translateY(-${speedFastest})`;
   creatorImgThree.style.transform = `translateY(-${speedFaster})`;
@@ -113,6 +111,8 @@ const observerLineupOptions = {
   threshold: 0,
   rootMargin: "-100px",
 };
+
+// Actual Observer
 
 const lineupObs = new IntersectionObserver(
   observerLineupFunc,
@@ -168,6 +168,8 @@ const observerGalleryOptions = {
   // rootMargin: "-50px",
 };
 
+// Actual Observer
+
 const galleryObs = new IntersectionObserver(
   observerGalleryFunc,
   observerGalleryOptions
@@ -192,3 +194,48 @@ closeModal.addEventListener("click", () => {
   modalContainer.classList.remove("modalOpen");
   closeModal.style.display = "none";
 });
+
+// ---- KICKS SECTION ---- //
+
+const kicksContainer = document.querySelector(".kicks-container");
+const kickBoxContainer = document.querySelectorAll(".kick-box-container");
+const kickBox = document.querySelectorAll(".kick-box");
+const vidBox = document.querySelectorAll(".vid-box");
+const pairTitle = document.querySelectorAll(".pair-title");
+
+// Observer Callback Function
+
+const observerKicksFunc = function (entries) {
+  const [entry] = entries;
+
+  console.log(entry);
+
+  if (entry.isIntersecting) {
+    kickBox.forEach((kb) => {
+      kb.classList.toggle("kicksAnimation");
+    });
+  }
+
+  if (entry.isIntersecting) kicksObs.unobserve(entry.target);
+};
+
+// Observer Options
+
+const observerKicksOptions = {
+  root: null,
+  threshold: 0,
+  rootMargin: "-100px",
+};
+
+// Actual Observer
+
+const kicksObs = new IntersectionObserver(
+  observerKicksFunc,
+  observerKicksOptions
+);
+
+kicksObs.observe(kicksContainer);
+
+// kickBoxContainer.forEach((kb) => {
+//   kicksObs.observe(kb);
+// });

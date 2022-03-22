@@ -82,6 +82,13 @@
         @include keep-it-hundo;
         object-fit: cover;
       }
+
+      @include tabletPortrait {
+        & {
+          width: 40rem;
+          height: 40rem;
+        }
+      }
     }
 
     .creator-img-one {
@@ -91,14 +98,32 @@
     .creator-img-two {
       bottom: -40%;
       left: 15%;
+
+      @include tabletPortrait {
+        & {
+          left: 10%;
+        }
+      }
     }
 
     .creator-img-three {
       left: 30%;
+
+      @include tabletPortrait {
+        & {
+          left: 35%;
+        }
+      }
     }
 
     .creator-img-four {
       left: 45%;
+
+      @include tabletPortrait {
+        & {
+          left: 43%;
+        }
+      }
     }
 
     .creator-text-one,
@@ -122,12 +147,26 @@
       font-size: 6rem;
       top: 13%;
       left: -50%;
+
+      @include tabletPortrait {
+        & {
+          font-size: 8rem;
+          left: -25%;
+        }
+      }
     }
 
     .creator-text-two {
       font-size: 8rem;
       top: 30%;
       right: -50%;
+
+      @include tabletPortrait {
+        & {
+          font-size: 10rem;
+          right: -25%;
+        }
+      }
     }
 
     .creator-text-three {
@@ -135,12 +174,26 @@
       top: 55%;
       left: -120%;
       @include text-shadowgray;
+
+      @include tabletPortrait {
+        & {
+          font-size: 16rem;
+          left: -60%;
+        }
+      }
     }
 
     .creator-text-four {
       font-size: 10rem;
       bottom: 0;
       right: -250%;
+
+      @include tabletPortrait {
+        & {
+          font-size: 12rem;
+          right: -150%;
+        }
+      }
     }
   }
 }

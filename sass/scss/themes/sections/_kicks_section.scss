@@ -15,377 +15,383 @@
 
     // INDIVIDUAL KICKS //
 
-    .kick-box {
+    .kick-box-container {
       width: 100%;
-      max-width: 150rem;
-      height: 60rem;
-      position: relative;
-      overflow: hidden;
+      height: auto;
 
-      &:not(:last-child) {
-        margin: 0 auto 10rem;
-      }
-
-      &:last-child {
-        margin: 0 auto 2rem;
-
-        @include tabletPortrait {
-          & {
-            margin: 0 auto 5rem;
-          }
-        }
-
-        @include tabletPortraitLarge {
-          & {
-            margin: 0 auto 10rem;
-          }
-        }
-      }
-
-      @include tabletPortrait {
-        & {
-          height: 75rem;
-        }
-      }
-
-      @include tabletLandscape {
-        & {
-          height: 80rem;
-        }
-      }
-
-      // Video BG
-
-      .vid-box {
-        width: 150%;
-        height: 150%;
-        position: relative;
-
-        &::after {
-          content: "";
-          @include keep-it-hundo;
-          @include absol-topLeftZero;
-          background-color: $color-dark;
-          opacity: 0.8;
-          z-index: -1;
-        }
-
-        .vid {
-          width: 150%;
-          height: 150%;
-          object-fit: cover;
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          z-index: -1;
-
-          @include desktop {
-            & {
-              left: -40%;
-            }
-          }
-        }
-      }
-
-      // Video BG - Lighter Opacity
-
-      .vid-box-opac::after {
-        opacity: 0.65;
-      }
-
-      // Polygon Shape
-
-      .bg-slant {
-        width: 200%;
-        height: 100%;
-        background-color: $color-lite;
-        position: absolute;
-        bottom: -40%;
-        left: -20%;
-        transform: rotate(-15deg);
-        -webkit-transform: rotate(-15deg);
-        -moz-transform: rotate(-15deg);
-        -ms-transform: rotate(-15deg);
-        -o-transform: rotate(-15deg);
-      }
-
-      // Shoe Title
-
-      .pair-title {
+      .kick-box {
         width: 100%;
-        height: auto;
-        color: $color-lite;
-        font-size: 5rem;
-        // letter-spacing: 0.5rem;
-        font-family: $secondary-font;
-        text-transform: capitalize;
-        position: absolute;
-        top: 3%;
-        left: 50%;
-        @include transformX;
-
-        @include tabletPortrait {
-          & {
-            font-size: 7rem;
-          }
-        }
-
-        @include desktop {
-          & {
-            font-size: 9rem;
-          }
-        }
-
-        p {
-          @include flex-center;
-
-          @include desktop {
-            & {
-              justify-content: flex-end;
-              padding-right: 8rem;
-            }
-          }
-        }
-      }
-
-      // Shoe IMG and Info Box
-
-      .kicks-content-box {
-        width: 90%;
-        height: 100%;
+        max-width: 150rem;
+        height: 60rem;
         position: relative;
-        @include absol-center;
+        overflow: hidden;
+        opacity: 0;
 
-        @include desktop {
-          & {
-            width: 100%;
-          }
+        &:not(:last-child) {
+          margin: 0 auto 10rem;
         }
 
-        // Shoe IMG
-
-        .pair-png-box {
-          width: 110%;
-          height: auto;
-          position: absolute;
-          top: 25%;
-          left: 50%;
-          @include transformX;
-
-          @include phoneLandscape {
-            & {
-              width: 90%;
-              top: 20%;
-            }
-          }
+        &:last-child {
+          margin: 0 auto 2rem;
 
           @include tabletPortrait {
             & {
-              width: 95%;
-              top: 17%;
+              margin: 0 auto 5rem;
             }
           }
 
-          @include tabletLandscape {
+          @include tabletPortraitLarge {
             & {
-              width: 75%;
-              top: 20%;
+              margin: 0 auto 10rem;
             }
-          }
-
-          @include desktop {
-            & {
-              width: 60%;
-              left: 30%;
-              top: 28%;
-            }
-          }
-
-          img {
-            @include keep-it-hundo;
-            object-fit: contain;
           }
         }
 
-        // Shoe Info and Size
+        @include tabletPortrait {
+          & {
+            height: 75rem;
+          }
+        }
 
-        .inner-content-box {
-          width: 100%;
-          height: 30%;
+        @include tabletLandscape {
+          & {
+            height: 80rem;
+          }
+        }
+
+        // Video BG
+
+        .vid-box {
+          width: 150%;
+          height: 150%;
+          position: relative;
+          @include transit3;
+
+          &::after {
+            content: "";
+            @include keep-it-hundo;
+            @include absol-topLeftZero;
+            background-color: $color-dark;
+            opacity: 0.8;
+            z-index: -1;
+          }
+
+          .vid {
+            width: 150%;
+            height: 150%;
+            object-fit: cover;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+
+            @include desktop {
+              & {
+                left: -40%;
+              }
+            }
+          }
+        }
+
+        // Video BG - Lighter Opacity
+
+        .vid-box-opac::after {
+          opacity: 0.65;
+        }
+
+        // Polygon Shape
+
+        .bg-slant {
+          width: 200%;
+          height: 100%;
+          background-color: $color-lite;
           position: absolute;
-          bottom: 5%;
+          bottom: -40%;
+          left: -20%;
+          transform: rotate(-15deg);
+          -webkit-transform: rotate(-15deg);
+          -moz-transform: rotate(-15deg);
+          -ms-transform: rotate(-15deg);
+          -o-transform: rotate(-15deg);
+        }
+
+        // Shoe Title
+
+        .pair-title {
+          width: 100%;
+          height: auto;
+          color: $color-lite;
+          font-size: 5rem;
+          font-family: $secondary-font;
+          text-transform: capitalize;
+          position: absolute;
+          top: 3%;
           left: 50%;
           @include transformX;
 
-          @include phoneLandscape {
+          @include tabletPortrait {
             & {
-              bottom: 2%;
-            }
-          }
-
-          @include tabletLandscape {
-            & {
-              bottom: 0;
-            }
-          }
-
-          @include tabletLandscapeLarge {
-            & {
-              padding-top: 2rem;
+              font-size: 7rem;
             }
           }
 
           @include desktop {
             & {
-              width: 40%;
-              height: 42%;
-              left: 78%;
-              bottom: 10%;
-              @include flex-center-col;
+              font-size: 9rem;
             }
           }
 
-          .content-main {
-            width: 100%;
-            color: red;
-            font-family: $tertiary-font;
-            font-size: 3rem;
+          p {
+            @include flex-center;
 
             @include desktop {
               & {
-                width: 80%;
-                text-align: start;
-                font-size: 4.5rem;
+                justify-content: flex-end;
+                padding-right: 8rem;
               }
             }
           }
+        }
 
-          // Shoe Info
+        // Shoe IMG and Info Box
 
-          .content-info {
-            width: 100%;
-            height: 50%;
-            @include flex-center;
+        .kicks-content-box {
+          width: 90%;
+          height: 100%;
+          position: relative;
+          @include absol-center;
+
+          @include desktop {
+            & {
+              width: 100%;
+            }
+          }
+
+          // Shoe IMG
+
+          .pair-png-box {
+            width: 110%;
+            height: auto;
+            position: absolute;
+            top: 25%;
+            left: 50%;
+            @include transformX;
 
             @include phoneLandscape {
               & {
-                @include flex-center;
+                width: 90%;
+                top: 20%;
               }
             }
 
-            ul {
-              width: 80%;
-              height: 100%;
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-              align-items: flex-start;
-
-              @include phoneLandscape {
-                & {
-                  width: 60%;
-                }
+            @include tabletPortrait {
+              & {
+                width: 95%;
+                top: 17%;
               }
+            }
 
-              @include tabletPortrait {
-                & {
-                  padding-left: 1rem;
-                }
+            @include tabletLandscape {
+              & {
+                width: 75%;
+                top: 20%;
               }
+            }
 
-              @include tabletLandscape {
-                & {
-                  padding-left: 8rem;
-                }
+            @include desktop {
+              & {
+                width: 60%;
+                left: 30%;
+                top: 28%;
               }
+            }
+
+            img {
+              @include keep-it-hundo;
+              object-fit: contain;
+            }
+          }
+
+          // Shoe Info and Size
+
+          .inner-content-box {
+            width: 100%;
+            height: 30%;
+            position: absolute;
+            bottom: 5%;
+            left: 50%;
+            @include transformX;
+
+            @include phoneLandscape {
+              & {
+                bottom: 2%;
+              }
+            }
+
+            @include tabletLandscape {
+              & {
+                bottom: 0;
+              }
+            }
+
+            @include tabletLandscapeLarge {
+              & {
+                padding-top: 2rem;
+              }
+            }
+
+            @include desktop {
+              & {
+                width: 40%;
+                height: 42%;
+                left: 78%;
+                bottom: 10%;
+                @include flex-center-col;
+              }
+            }
+
+            .content-main {
+              width: 100%;
+              color: red;
+              font-family: $tertiary-font;
+              font-size: 3rem;
 
               @include desktop {
                 & {
                   width: 80%;
-                  padding-left: 0;
+                  text-align: start;
+                  font-size: 4.5rem;
+                }
+              }
+            }
+
+            // Shoe Info
+
+            .content-info {
+              width: 100%;
+              height: 50%;
+              @include flex-center;
+
+              @include phoneLandscape {
+                & {
+                  @include flex-center;
                 }
               }
 
-              li {
-                margin-left: 1.5rem;
-                font-size: 1.65rem;
-                text-align: start;
+              ul {
+                width: 80%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+
+                @include phoneLandscape {
+                  & {
+                    width: 60%;
+                  }
+                }
 
                 @include tabletPortrait {
                   & {
-                    font-size: 2rem;
+                    padding-left: 1rem;
+                  }
+                }
+
+                @include tabletLandscape {
+                  & {
+                    padding-left: 8rem;
                   }
                 }
 
                 @include desktop {
                   & {
-                    font-size: 2.5rem;
+                    width: 80%;
+                    padding-left: 0;
+                  }
+                }
+
+                li {
+                  margin-left: 1.5rem;
+                  font-size: 1.65rem;
+                  text-align: start;
+
+                  @include tabletPortrait {
+                    & {
+                      font-size: 2rem;
+                    }
+                  }
+
+                  @include desktop {
+                    & {
+                      font-size: 2.5rem;
+                    }
                   }
                 }
               }
             }
-          }
 
-          // Shoe Size
+            // Shoe Size
 
-          .content-size {
-            width: 100%;
-            height: 5rem;
-            @include flex-center;
-
-            @include desktop {
-              & {
-                width: 80%;
-                justify-content: flex-end;
-              }
-            }
-
-            .size {
-              margin-right: 0.5rem;
-              font-size: 2.5rem;
-            }
-
-            .shoe-sizes {
+            .content-size {
+              width: 100%;
+              height: 5rem;
               @include flex-center;
 
-              .size-li {
-                width: 3rem;
-                height: 3rem;
-                position: relative;
-                list-style-type: none;
-                font-size: 2rem;
-                margin-left: 0.5rem;
+              @include desktop {
+                & {
+                  width: 80%;
+                  justify-content: flex-end;
+                }
+              }
+
+              .size {
+                margin-right: 0.5rem;
+                font-size: 2.5rem;
+              }
+
+              .shoe-sizes {
                 @include flex-center;
-                @include transit3;
-                cursor: pointer;
-                border: 0.1rem solid $color-dark;
-                border-radius: 0.25rem;
-                -webkit-border-radius: 0.25rem;
-                -moz-border-radius: 0.25rem;
-                -ms-border-radius: 0.25rem;
-                -o-border-radius: 0.25rem;
 
-                &::after {
-                  content: "out of stock";
-                  width: 400%;
-                  height: auto;
-                  display: none;
-                  font-family: $tertiary-font;
-                  font-size: 1.4rem;
-                  color: red;
-                  position: absolute;
-                  top: -70%;
-                  left: 50%;
-                  @include transformX;
-                }
+                .size-li {
+                  width: 3rem;
+                  height: 3rem;
+                  position: relative;
+                  list-style-type: none;
+                  font-size: 2rem;
+                  margin-left: 0.5rem;
+                  @include flex-center;
+                  @include transit3;
+                  cursor: pointer;
+                  border: 0.1rem solid $color-dark;
+                  border-radius: 0.25rem;
+                  -webkit-border-radius: 0.25rem;
+                  -moz-border-radius: 0.25rem;
+                  -ms-border-radius: 0.25rem;
+                  -o-border-radius: 0.25rem;
 
-                &:hover::after {
-                  display: block;
-                }
+                  &::after {
+                    content: "out of stock";
+                    width: 400%;
+                    height: auto;
+                    display: none;
+                    font-family: $tertiary-font;
+                    font-size: 1.4rem;
+                    color: red;
+                    position: absolute;
+                    top: -70%;
+                    left: 50%;
+                    @include transformX;
+                  }
 
-                &:hover {
-                  background-color: $color-dark;
-                  color: $color-lite;
+                  &:hover::after {
+                    display: block;
+                  }
+
+                  &:hover {
+                    background-color: $color-dark;
+                    color: $color-lite;
+                  }
                 }
               }
             }
@@ -393,5 +399,39 @@
         }
       }
     }
+  }
+}
+
+.kicksAnimation {
+  animation: kicksAnimate 0.8s linear 0.3s both;
+  -webkit-animation: kicksAnimate 0.8s linear 0.3s both;
+}
+
+@keyframes kicksAnimate {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+    -webkit-transform: translateY(100%);
+    -moz-transform: translateY(100%);
+    -ms-transform: translateY(100%);
+    -o-transform: translateY(100%);
+  }
+
+  80% {
+    opacity: 1;
+    transform: translateY(-5%);
+    -webkit-transform: translateY(-5%);
+    -moz-transform: translateY(-5%);
+    -ms-transform: translateY(-5%);
+    -o-transform: translateY(-5%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
   }
 }
