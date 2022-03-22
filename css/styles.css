@@ -1655,8 +1655,13 @@ body {
 }
 
 .kicksAnimation {
-  animation: kicksAnimate 0.8s linear 0.3s both;
-  -webkit-animation: kicksAnimate 0.8s linear 0.3s both;
+  animation: kicksAnimate 0.8s linear 0.3s forwards;
+  -webkit-animation: kicksAnimate 0.8s linear 0.3s forwards;
+}
+
+.showOpacity {
+  animation: opace 0.8s ease-in-out 0.4s forwards;
+  -webkit-animation: opace 0.8s ease-in-out 0.4s forwards;
 }
 
 @keyframes kicksAnimate {
@@ -1683,6 +1688,15 @@ body {
     -moz-transform: translateY(0);
     -ms-transform: translateY(0);
     -o-transform: translateY(0);
+  }
+}
+
+@keyframes opace {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 

@@ -202,19 +202,15 @@ const kickBoxContainer = document.querySelectorAll(".kick-box-container");
 const kickBox = document.querySelectorAll(".kick-box");
 const vidBox = document.querySelectorAll(".vid-box");
 const pairTitle = document.querySelectorAll(".pair-title");
+const bgSlant = document.querySelectorAll(".bg-slant");
 
 // Observer Callback Function
 
 const observerKicksFunc = function (entries) {
   const [entry] = entries;
-
   console.log(entry);
 
-  if (entry.isIntersecting) {
-    kickBox.forEach((kb) => {
-      kb.classList.toggle("kicksAnimation");
-    });
-  }
+  entry.target.classList.toggle("kicksAnimation", entry.isIntersecting);
 
   if (entry.isIntersecting) kicksObs.unobserve(entry.target);
 };
@@ -224,7 +220,7 @@ const observerKicksFunc = function (entries) {
 const observerKicksOptions = {
   root: null,
   threshold: 0,
-  rootMargin: "-100px",
+  rootMargin: "-200px",
 };
 
 // Actual Observer
@@ -234,8 +230,6 @@ const kicksObs = new IntersectionObserver(
   observerKicksOptions
 );
 
-kicksObs.observe(kicksContainer);
-
-// kickBoxContainer.forEach((kb) => {
-//   kicksObs.observe(kb);
-// });
+kickBox.forEach((ks) => {
+  kicksObs.observe(ks);
+});
