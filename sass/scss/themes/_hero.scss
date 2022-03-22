@@ -2,87 +2,222 @@
   width: 100%;
   height: 100vh;
   @include flex-center-col;
+  position: relative;
 
-  // Hero Img //
+  // Hero BG Auto Slider //
 
-  .hero-img-box {
-    width: 90%;
-    height: auto;
-    filter: drop-shadow(0.1rem 0.1rem 0.3rem #050505a1);
-    -webkit-filter: drop-shadow(0.1rem 0.1rem 0.3rem #050505a1);
+  .hero-slider-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
 
-    @include phoneLandscape {
-      & {
-        width: 55%;
-      }
-    }
-
-    @include tabletPortrait {
-      & {
-        width: 65%;
-        filter: drop-shadow(0.2rem 0.2rem 0.5rem #050505a1);
-        -webkit-filter: drop-shadow(0.2rem 0.2rem 0.5rem #050505a1);
-      }
-    }
-
-    @include largeDesktop {
-      & {
-        width: 60%;
-      }
-    }
-
-    .hero-img {
+    .slider {
       @include keep-it-hundo;
-      object-fit: contain;
+
+      .slides {
+        @include keep-it-hundo;
+        position: absolute;
+        top: 0;
+        animation: autoSlider 8s linear 0.2s infinite;
+        -webkit-animation: autoSlider 8s linear 0.2s infinite;
+
+        &:nth-of-type(1) {
+          left: 0;
+        }
+
+        &:nth-of-type(2) {
+          left: 100%;
+        }
+
+        &:nth-of-type(3) {
+          left: 200%;
+        }
+
+        .vid {
+          @include keep-it-hundo;
+          object-fit: cover;
+
+          &:nth-of-type(1) {
+            opacity: 0.7;
+          }
+        }
+      }
     }
   }
 
-  // Social Media Icons //
+  // Hero Img //
 
-  .icon-wrapper {
-    width: 40%;
-    height: auto;
-    margin-top: 2rem;
-    @include flex-center;
-    justify-content: space-evenly;
+  .hero-img-container {
+    @include keep-it-hundo;
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include flex-center-col;
 
-    @include phoneLandscape {
-      & {
-        width: 20%;
-      }
-    }
+    .hero-img-box {
+      width: 90%;
+      height: auto;
+      filter: drop-shadow(0.1rem 0.1rem 0.3rem #050505a1);
+      -webkit-filter: drop-shadow(0.1rem 0.1rem 0.3rem #050505a1);
 
-    @include tabletPortrait {
-      & {
-        width: 15%;
-      }
-    }
-
-    @include desktop {
-      & {
-        width: 20%;
-      }
-    }
-
-    i {
-      color: $color-dark;
-      font-size: 2.5rem;
-      @include text-shadowgray-lite;
-      @include transit3;
-
-      @include largeDesktop {
+      @include phoneLandscape {
         & {
-          font-size: 5rem;
+          width: 55%;
         }
       }
 
-      &:hover {
-        transform: scale(1.2);
-        -webkit-transform: scale(1.2);
-        -moz-transform: scale(1.2);
-        -ms-transform: scale(1.2);
-        -o-transform: scale(1.2);
+      @include tabletPortrait {
+        & {
+          width: 65%;
+          filter: drop-shadow(0.2rem 0.2rem 0.5rem #050505a1);
+          -webkit-filter: drop-shadow(0.2rem 0.2rem 0.5rem #050505a1);
+        }
+      }
+
+      @include largeDesktop {
+        & {
+          width: 60%;
+        }
+      }
+
+      .hero-img {
+        @include keep-it-hundo;
+        object-fit: contain;
       }
     }
+
+    // Social Media Icons //
+
+    .icon-wrapper {
+      width: 40%;
+      height: auto;
+      margin-top: 2rem;
+      @include flex-center;
+      justify-content: space-evenly;
+
+      @include phoneLandscape {
+        & {
+          width: 20%;
+        }
+      }
+
+      @include tabletPortrait {
+        & {
+          width: 15%;
+        }
+      }
+
+      @include desktop {
+        & {
+          width: 20%;
+        }
+      }
+
+      i {
+        color: $color-dark;
+        font-size: 2.5rem;
+        @include text-shadowgray-lite;
+        @include transit3;
+
+        @include largeDesktop {
+          & {
+            font-size: 5rem;
+          }
+        }
+
+        &:hover {
+          transform: scale(1.2);
+          -webkit-transform: scale(1.2);
+          -moz-transform: scale(1.2);
+          -ms-transform: scale(1.2);
+          -o-transform: scale(1.2);
+        }
+      }
+    }
+  }
+}
+
+@keyframes autoSlider {
+  0% {
+    transform: translateX(0%);
+    -webkit-transform: translateX(0%);
+    -moz-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    -o-transform: translateX(0%);
+  }
+
+  21% {
+    transform: translateX(-0%);
+    -webkit-transform: translateX(-0%);
+    -moz-transform: translateX(-0%);
+    -ms-transform: translateX(-0%);
+    -o-transform: translateX(-0%);
+  }
+
+  24% {
+    transform: translateX(-20%);
+    -webkit-transform: translateX(-20%);
+    -moz-transform: translateX(-20%);
+    -ms-transform: translateX(-20%);
+    -o-transform: translateX(-20%);
+  }
+
+  27% {
+    transform: translateX(0%);
+    -webkit-transform: translateX(0%);
+    -moz-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    -o-transform: translateX(0%);
+  }
+
+  30% {
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+  }
+
+  60% {
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+  }
+
+  63% {
+    transform: translateX(-120%);
+    -webkit-transform: translateX(-120%);
+    -moz-transform: translateX(-120%);
+    -ms-transform: translateX(-120%);
+    -o-transform: translateX(-120%);
+  }
+
+  68% {
+    transform: translateX(-105%);
+    -webkit-transform: translateX(-105%);
+    -moz-transform: translateX(-105%);
+    -ms-transform: translateX(-105%);
+    -o-transform: translateX(-105%);
+  }
+
+  70% {
+    transform: translateX(-200%);
+    -webkit-transform: translateX(-200%);
+    -moz-transform: translateX(-200%);
+    -ms-transform: translateX(-200%);
+    -o-transform: translateX(-200%);
+  }
+
+  100% {
+    transform: translateX(-200%);
+    -webkit-transform: translateX(-200%);
+    -moz-transform: translateX(-200%);
+    -ms-transform: translateX(-200%);
+    -o-transform: translateX(-200%);
   }
 }
