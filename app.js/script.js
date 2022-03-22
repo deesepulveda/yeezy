@@ -220,7 +220,7 @@ const observerKicksFunc = function (entries) {
 const observerKicksOptions = {
   root: null,
   threshold: 0,
-  rootMargin: "-200px",
+  rootMargin: "-100px",
 };
 
 // Actual Observer
