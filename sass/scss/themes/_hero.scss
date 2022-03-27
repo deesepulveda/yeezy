@@ -38,6 +38,10 @@
           left: 200%;
         }
 
+        &:nth-of-type(4) {
+          left: 300%;
+        }
+
         .hero-slide-imgs {
           @include keep-it-hundo;
           object-fit: cover;
@@ -118,9 +122,9 @@
       }
 
       i {
-        color: $color-dark;
+        color: $color-lite;
         font-size: 2.5rem;
-        @include text-shadowgray-lite;
+        @include text-shadowdeep;
         @include transit3;
 
         @include largeDesktop {
@@ -150,7 +154,7 @@
     -o-transform: translateX(0%);
   }
 
-  25% {
+  20% {
     transform: translateX(0%);
     -webkit-transform: translateX(0%);
     -moz-transform: translateX(0%);
@@ -158,7 +162,7 @@
     -o-transform: translateX(0%);
   }
 
-  28% {
+  23% {
     transform: translateX(-20%);
     -webkit-transform: translateX(-20%);
     -moz-transform: translateX(-20%);
@@ -166,7 +170,7 @@
     -o-transform: translateX(-20%);
   }
 
-  31% {
+  26% {
     transform: translateX(-5%);
     -webkit-transform: translateX(-5%);
     -moz-transform: translateX(-5%);
@@ -174,7 +178,7 @@
     -o-transform: translateX(-5%);
   }
 
-  35% {
+  28% {
     transform: translateX(-100%);
     -webkit-transform: translateX(-100%);
     -moz-transform: translateX(-100%);
@@ -182,7 +186,7 @@
     -o-transform: translateX(-100%);
   }
 
-  64% {
+  47% {
     transform: translateX(-100%);
     -webkit-transform: translateX(-100%);
     -moz-transform: translateX(-100%);
@@ -190,7 +194,7 @@
     -o-transform: translateX(-100%);
   }
 
-  67% {
+  50% {
     transform: translateX(-120%);
     -webkit-transform: translateX(-120%);
     -moz-transform: translateX(-120%);
@@ -198,12 +202,20 @@
     -o-transform: translateX(-120%);
   }
 
-  70% {
+  53% {
     transform: translateX(-105%);
     -webkit-transform: translateX(-105%);
     -moz-transform: translateX(-105%);
     -ms-transform: translateX(-105%);
     -o-transform: translateX(-105%);
+  }
+
+  55% {
+    transform: translateX(-200%);
+    -webkit-transform: translateX(-200%);
+    -moz-transform: translateX(-200%);
+    -ms-transform: translateX(-200%);
+    -o-transform: translateX(-200%);
   }
 
   74% {
@@ -214,15 +226,7 @@
     -o-transform: translateX(-200%);
   }
 
-  93% {
-    transform: translateX(-200%);
-    -webkit-transform: translateX(-200%);
-    -moz-transform: translateX(-200%);
-    -ms-transform: translateX(-200%);
-    -o-transform: translateX(-200%);
-  }
-
-  96% {
+  77% {
     transform: translateX(-220%);
     -webkit-transform: translateX(-220%);
     -moz-transform: translateX(-220%);
@@ -230,11 +234,27 @@
     -o-transform: translateX(-220%);
   }
 
-  99% {
+  80% {
     transform: translateX(-205%);
     -webkit-transform: translateX(-205%);
     -moz-transform: translateX(-205%);
     -ms-transform: translateX(-205%);
     -o-transform: translateX(-205%);
+  }
+
+  82% {
+    transform: translateX(-300%);
+    -webkit-transform: translateX(-300%);
+    -moz-transform: translateX(-300%);
+    -ms-transform: translateX(-300%);
+    -o-transform: translateX(-300%);
+  }
+
+  96% {
+    transform: translateX(-300%);
+    -webkit-transform: translateX(-300%);
+    -moz-transform: translateX(-300%);
+    -ms-transform: translateX(-300%);
+    -o-transform: translateX(-300%);
   }
 }
