@@ -32,6 +32,31 @@
 
     .new-shoes {
       width: 90%;
+      position: relative;
+
+      &::after {
+        content: "COMING SOON";
+        opacity: 0;
+        @include keep-it-hundo;
+        @include absol-center;
+        @include transit3;
+        font-size: 3rem;
+        font-family: $tertiary-font;
+        color: red;
+        z-index: -1;
+      }
+
+      &:hover::after {
+        opacity: 1;
+      }
+
+      &:hover > .new-shoes-img {
+        transform: scale(1.1) rotate(-25deg);
+        -webkit-transform: scale(1.1) rotate(-25deg);
+        -moz-transform: scale(1.1) rotate(-25deg);
+        -ms-transform: scale(1.1) rotate(-25deg);
+        -o-transform: scale(1.1) rotate(-25deg);
+      }
 
       @include tabletPortrait {
         & {
@@ -49,6 +74,7 @@
         width: 80%;
         height: auto;
         object-fit: contain;
+        @include transit3;
         cursor: pointer;
       }
     }
