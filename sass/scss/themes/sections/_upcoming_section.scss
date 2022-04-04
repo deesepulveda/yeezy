@@ -33,29 +33,51 @@
     .new-shoes {
       width: 90%;
       position: relative;
+      overflow: hidden;
 
       &::after {
         content: "COMING SOON";
         opacity: 0;
         @include keep-it-hundo;
-        @include absol-center;
         @include transit3;
         font-size: 3rem;
         font-family: $tertiary-font;
+        @include text-shadowgray-lite;
         color: red;
+        position: absolute;
+        left: 50%;
+        top: 70%;
+        @include transformX;
         z-index: -1;
+
+        @include tabletPortrait {
+          & {
+            font-size: 6rem;
+          }
+        }
+
+        @include desktop {
+          & {
+            font-size: 3rem;
+          }
+        }
       }
 
       &:hover::after {
         opacity: 1;
+        transform: translate(-50%, -70%);
+        -webkit-transform: translate(-50%, -70%);
+        -moz-transform: translate(-50%, -70%);
+        -ms-transform: translate(-50%, -70%);
+        -o-transform: translate(-50%, -70%);
       }
 
       &:hover > .new-shoes-img {
-        transform: scale(1.1) rotate(-25deg);
-        -webkit-transform: scale(1.1) rotate(-25deg);
-        -moz-transform: scale(1.1) rotate(-25deg);
-        -ms-transform: scale(1.1) rotate(-25deg);
-        -o-transform: scale(1.1) rotate(-25deg);
+        transform: scale(0.8);
+        -webkit-transform: scale(0.8);
+        -moz-transform: scale(0.8);
+        -ms-transform: scale(0.8);
+        -o-transform: scale(0.8);
       }
 
       @include tabletPortrait {

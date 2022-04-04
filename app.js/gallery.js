@@ -79,3 +79,5 @@ closeModal.addEventListener("click", () => {
   modalContainer.classList.remove("modalOpen");
   closeModal.style.display = "none";
 });
+
+export * from "./gallery.js";

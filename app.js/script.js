@@ -1,12 +1,12 @@
-// ACTIVATE STRICT MODE //
-
-"use strict";
+import * as galleryJS from "./gallery.js";
+import * as lineupJS from "./lineup.js";
+import * as kicksJS from "./kicks.js";
 
 // ---- HEADER, NAV & BURGER ---- //
 
 const logoImg = document.querySelector(".logo-main");
 const navMenu = document.getElementById("nav-main");
-const burger = document.getElementById("burger");
+// const burger = document.getElementById("burger");
 const cheese = document.getElementById("cheese");
 const topBun = document.getElementById("top");
 const meat = document.getElementById("meat");
@@ -43,7 +43,7 @@ navLinks.forEach((l) => {
 
 // ---- CREATOR SECTION ---- //
 
-const bgImg = document.querySelector(".bg-img");
+// const bgImg = document.querySelector(".bg-img");
 const creatorSect = document.querySelector(".section-creator");
 const creatorImgBox = document.querySelector(".bg-img-box");
 const creatorImgOne = document.querySelector(".creator-img-one");

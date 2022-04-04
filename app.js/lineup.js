@@ -40,3 +40,5 @@ const lineupObserver = new IntersectionObserver(
 );
 
 lineupObserver.observe(shoeContainer);
+
+export * from "./lineup.js";

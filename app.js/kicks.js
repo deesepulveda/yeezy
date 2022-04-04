@@ -37,3 +37,5 @@ const kicksObserver = new IntersectionObserver(
 kickBox.forEach((kb) => {
   kicksObserver.observe(kb);
 });
+
+export * from "./kicks.js";
