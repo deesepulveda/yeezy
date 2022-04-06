@@ -29,7 +29,7 @@ const lineupObserverFunction = function (entries) {
 const lineupObserverOptions = {
   root: null,
   threshold: 0,
-  rootMargin: "-100px",
+  rootMargin: "-50px",
 };
 
 // Actual Observer

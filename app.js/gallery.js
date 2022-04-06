@@ -5,18 +5,18 @@
 // ---- GALLERY SECTION ---- //
 
 const galleryContainer = document.querySelector(".gallery-container");
-const gallerySect = document.querySelector(".section-gallery");
+// const gallerySect = document.querySelector(".section-gallery");
 const galleryImgBox = document.querySelectorAll(".gallery-img-box");
 const galleryImage = document.querySelectorAll(".gallery-img");
 const modalContainer = document.querySelector(".modal-container");
-const modalImgBox = document.querySelector(".modal-img-box");
+// const modalImgBox = document.querySelector(".modal-img-box");
 const modalImg = document.querySelector(".modal-img");
 const closeModal = document.querySelector(".far");
 
 // Media Queries
 
 const mediaQueryLandscape = window.matchMedia("(min-width: 1024px)");
-const mediaQueryPortrait = window.matchMedia("min-width: 300px");
+// const mediaQueryPortrait = window.matchMedia("min-width: 300px");
 
 // Observer Callback Function
 
@@ -48,7 +48,7 @@ const galleryObserverFunction = function (entries) {
 const galleryObserverOptions = {
   root: null,
   threshold: 0,
-  // rootMargin: "-50px",
+  rootMargin: "-50px",
 };
 
 // Actual Observer

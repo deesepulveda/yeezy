@@ -115,35 +115,35 @@
       }
 
       &:nth-of-type(1) {
-        animation-delay: 300ms;
+        animation-delay: 0ms;
       }
 
       &:nth-of-type(2) {
-        animation-delay: 500ms;
+        animation-delay: 300ms;
       }
 
       &:nth-of-type(3) {
-        animation-delay: 700ms;
+        animation-delay: 500ms;
       }
 
       &:nth-of-type(4) {
-        animation-delay: 900ms;
+        animation-delay: 700ms;
       }
 
       &:nth-of-type(5) {
-        animation-delay: 1100ms;
+        animation-delay: 900ms;
       }
 
       &:nth-of-type(6) {
-        animation-delay: 1300ms;
+        animation-delay: 1100ms;
       }
 
       &:nth-of-type(7) {
-        animation-delay: 1500ms;
+        animation-delay: 1300ms;
       }
 
       &:nth-of-type(8) {
-        animation-delay: 1700ms;
+        animation-delay: 1500ms;
       }
     }
   }
