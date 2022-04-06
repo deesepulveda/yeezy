@@ -213,7 +213,8 @@ body {
     position: relative;
     position: absolute;
     top: 0;
-    left: 0; }
+    left: 0;
+    overflow: hidden; }
     .hero .hero-img-container .hero-img-box {
       width: 100%;
       height: auto;
