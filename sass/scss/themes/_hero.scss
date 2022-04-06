@@ -39,10 +39,6 @@
           left: 200%;
         }
 
-        // &:nth-of-type(4) {
-        //   left: 300%;
-        // }
-
         .hero-slide-imgs {
           @include keep-it-hundo;
           object-fit: cover;
@@ -71,10 +67,11 @@
       height: auto;
       position: absolute;
       top: 42%;
-      filter: drop-shadow(0.2rem 0.2rem 0.4rem #050505a1);
-      -webkit-filter: drop-shadow(0.2rem 0.2rem 0.4rem #050505a1);
+      filter: drop-shadow(0.2rem 0.2rem 0.3rem #050505ce);
+      -webkit-filter: drop-shadow(0.2rem 0.2rem 0.3rem #050505ce);
       animation: autoSliderLogo 8s linear 0.2s infinite;
       -webkit-animation: autoSliderLogo 8s linear 0.2s infinite;
+
       &:nth-of-type(1) {
         left: 0;
       }
@@ -87,52 +84,33 @@
         left: 200%;
       }
 
-      .hero-img {
-        width: 80%;
-        height: auto;
-        object-fit: contain;
-      }
-    }
-
-    // Social Media Icons //
-
-    .icon-wrapper {
-      width: 40%;
-      height: auto;
-      margin-top: 2rem;
-      @include flex-center;
-      justify-content: space-evenly;
-
-      @include phoneLandscape {
+      @include tabletLandscape {
         & {
-          width: 20%;
+          top: 40%;
         }
       }
 
       @include desktop {
         & {
-          width: 20%;
+          top: 35%;
         }
       }
 
-      i {
-        color: $color-lite;
-        font-size: 2.5rem;
-        @include text-shadowdeep;
-        @include transit3;
+      .hero-img {
+        width: 80%;
+        height: auto;
+        object-fit: contain;
 
-        @include largeDesktop {
+        @include tabletLandscape {
           & {
-            font-size: 5rem;
+            width: 60%;
           }
         }
 
-        &:hover {
-          transform: scale(1.2);
-          -webkit-transform: scale(1.2);
-          -moz-transform: scale(1.2);
-          -ms-transform: scale(1.2);
-          -o-transform: scale(1.2);
+        @include largeDesktop {
+          & {
+            width: 40%;
+          }
         }
       }
     }
@@ -260,7 +238,7 @@
     -o-transform: translateX(-100%);
   }
 
-  79% {
+  80% {
     transform: translateX(-100%);
     -webkit-transform: translateX(-100%);
     -moz-transform: translateX(-100%);
@@ -268,7 +246,7 @@
     -o-transform: translateX(-100%);
   }
 
-  81% {
+  82% {
     transform: translateX(-200%);
     -webkit-transform: translateX(-200%);
     -moz-transform: translateX(-200%);

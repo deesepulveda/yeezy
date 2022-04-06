@@ -48,7 +48,7 @@ const galleryObserverFunction = function (entries) {
 const galleryObserverOptions = {
   root: null,
   threshold: 0,
-  rootMargin: "-50px",
+  rootMargin: "-100px",
 };
 
 // Actual Observer
